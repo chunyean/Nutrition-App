@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Input from "./Input";
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
+// import Box from '@mui/material/Box';
+// import TextField from '@mui/material/TextField';
+import "./input.css"
 
 
 const PersonalRecipeSearch = () => {
@@ -61,11 +62,11 @@ const PersonalRecipeSearch = () => {
             handleOnChange={handleTitle}
           ></Input>
           <h3>Key in all the weight, unit and ingredient</h3>
-          <Input
-            className="col-sm-5"
+          <textarea
+            className="input"
             placeHolder="Weight and Ingredient"
-            handleOnChange={handleIngredient}
-          ></Input>
+            onChange={handleIngredient}
+          ></textarea>
           <button className="col-sm-2" type="button" onClick={getData}>
             submit
           </button>
