@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import Input from "./Input";
-// import Box from '@mui/material/Box';
-// import TextField from '@mui/material/TextField';
-import "./input.css"
-
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import "./Input.css";
+import PersonalSearchResult from "./PersonalSearchResult";
 
 const PersonalRecipeSearch = () => {
   const [title, setTitle] = useState("");
-  const [ingredient, setIngredient] = useState([]);
+  const [ingredient, setIngredient] = useState("");
   const [nutrition, setNutrition] = useState("");
+  const [dataArray, setDataArray] = useState([]);
 
   const getData = async () => {
     const res = await fetch(import.meta.env.VITE_DETAIL, {
@@ -17,33 +18,29 @@ const PersonalRecipeSearch = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        "title": title,
-        "ingr": ingredient
+        title: title,
+        ingr: dataArray,
       }),
     });
 
     if (res.status === 200) {
       const data = await res.json();
       setNutrition(data);
-      console.log(nutrition)
-    }else{
+    } else {
       alert("there is an error");
     }
   };
 
   const handleTitle = (e) => {
-    const data = e.target.value;
-    setTitle(data);
-
-  };
-
-  const handleIngredient = (e) => {
     const data = [e.target.value];
-    setIngredient(data);
+    setTitle(data);
   };
-  
-  console.log(title)
-  console.log(ingredient)
+
+  const handleChange = (event) => {
+    setIngredient(event.target.value);
+    const newArray = event.target.value.split("\n");
+    setDataArray(newArray);
+  };
 
   return (
     <>
@@ -58,20 +55,37 @@ const PersonalRecipeSearch = () => {
           <Input
             className="col-sm-3"
             type="text"
+            value={ingredient}
             placeHolder="Title"
             handleOnChange={handleTitle}
           ></Input>
           <h3>Key in all the weight, unit and ingredient</h3>
-          <textarea
-            className="input"
-            placeHolder="Weight and Ingredient"
-            onChange={handleIngredient}
-          ></textarea>
+          <Box
+            component="form"
+            sx={{
+              "& .MuiTextField-root": { m: 1, width: "100ch" },
+            }}
+          >
+            <div>
+              <TextField
+                className=""
+                id="outlined-multiline-static"
+                multiline
+                rows={10}
+                placeholder="key in ingredient with weight"
+                onChange={handleChange}
+              />
+            </div>
+          </Box>
           <button className="col-sm-2" type="button" onClick={getData}>
             submit
           </button>
         </div>
       </div>
+      {nutrition && <PersonalSearchResult
+        nutrition={nutrition}
+        title={title}
+      ></PersonalSearchResult>}
     </>
   );
 };

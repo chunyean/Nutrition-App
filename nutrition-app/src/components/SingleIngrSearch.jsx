@@ -85,7 +85,7 @@ const SingleIngrSearch = () => {
         </div>
       </div>
 
-      {singleIngr && image && (
+      {singleIngr && (
         <SearchIngredient
           singleIngr={singleIngr}
           weight={weight}

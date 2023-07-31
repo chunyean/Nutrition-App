@@ -1,15 +1,9 @@
-import React from "react";
+import React from 'react';
 import "./table.css";
 
-const SearchIngredient = (props) => {
-  console.log(props.singleIngr);
-  console.log(props.weight);
-  console.log(props.ingredient)
-  console.log(props.unit);
-  console.log(props.image);
-
-
-  const data = props.singleIngr;
+const PersonalSearchResult = (props) => {
+    console.log(props.nutrition)
+  const data = props.nutrition;
   const totalNutrients = data.totalNutrients;
   const totalDaily = data.totalDaily;
 
@@ -46,26 +40,16 @@ const SearchIngredient = (props) => {
   const ironPercen = totalDaily.FE.quantity.toFixed();
   const potassiumPercen = totalDaily.K.quantity.toFixed();
 
-  const photo = () => {
-    return (
-      props.image.parsed[0].food.image ||
-      props.image.hints[0].food.image ||
-      props.image.hints[1].food.image ||
-      props.image.hints[2].food.image ||
-      props.image.hints[3].food.image
-    );
-  };
 
   return (
     <>
-      <img src={photo()} className="image"></img>
       <section className="nutrition-facts">
         <header className="header">
           <h2 className="title">Nutrition Facts</h2>
-          <h2 className="ingredient">{props.ingredient}</h2>
+          <h2 className="ingredient">{props.title}</h2>
           <p className="serving-size">
-            Serving Size {props.weight}
-            {props.unit}
+            Serving Size {data.totalWeight}
+            gm
           </p>
         </header>
 
@@ -173,4 +157,4 @@ const SearchIngredient = (props) => {
   );
 };
 
-export default SearchIngredient;
+export default PersonalSearchResult;
