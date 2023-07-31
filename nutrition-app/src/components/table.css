@@ -1,9 +1,15 @@
+.image {
+  float: left;
+  padding: 150px;
+}
+
 .nutrition-facts {
   border: 1px solid blue;
-  margin: 10px 200px;
   width: 400px;
   padding: 5px;
   background-color: white;
+  margin: 20px;
+  float: left;
 }
 
 .title {
@@ -53,4 +59,9 @@
 
 .last {
   border-bottom: 10px solid blue;
+}
+
+.tdline {
+  border-bottom: 1px solid blue;
+  text-align: right;
 }

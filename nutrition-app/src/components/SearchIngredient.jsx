@@ -1,52 +1,77 @@
-import React from "react";
+import React, { useState } from "react";
 import "./table.css";
 
 const SearchIngredient = (props) => {
-    console.log(props.singleIngr);
-    console.log(props.weight)
-    console.log(props.unit)
-    // variable for nutrtion
-    const data = props.singleIngr;
-    const totalNutrients = data.totalNutrients;
-    const totalDaily = data.totalDaily;
-    const calories = data.calories;
-    const totalFat = totalNutrients.FAT.quantity;
-    const saturatedFat = totalNutrients.FASAT.quantity;
-    const transFat = totalNutrients.FATRN
-      ? totalNutrients.FATRN.quantity
-      : 0;
-    const cholestrol = totalNutrients.CHOLE.quantity;
-    const sodium = totalNutrients.NA.quantity;
-    const totalCarbohydrate = totalNutrients.CHOCDF.quantity;
-    const dietaryFiber = totalNutrients.FIBTG.quantity;
-    const totalSugar = totalNutrients.SUGAR.quantity;
-    const protein = totalNutrients.PROCNT.quantity;
-    const vitaminD = totalNutrients.VITD.quantity;
-    const calcium = totalNutrients.CA.quantity;
-    const iron = totalNutrients.FE.quantity;
-    const potassium = totalNutrients.K.quantity;
+  console.log(props.singleIngr);
+  console.log(props.weight);
+  console.log(props.unit);
+  console.log(props.image);
+  const [image, setImage] = useState();
 
-    //variable for daily value
-    const totalFatPercen = totalDaily.FAT.quantity;
-    const saturatedPercen = totalDaily.FASAT.quantity;
-    const chocolestrolPercen = totalDaily.CHOLE.quantity;
-    const sodiumPercen = totalDaily.NA.quantity;
-    const totalCarbohydratePercen = totalDaily.CHOCDF.quantity;
-    const dietaryFiberPercen = totalDaily.FIBTG.quantity;
-    const proteinPercen = totalDaily.PROCNT.quantity;
-    const VitaminDPercen = totalDaily.VITD.quantity;
-    const calciumPercen = totalDaily.CA.quantity;
-    const ironPercen = totalDaily.FE.quantity;
-    const potassiumPercen = totalDaily.K.quantity;
+  const data = props.singleIngr;
+  const totalNutrients = data.totalNutrients;
+  const totalDaily = data.totalDaily;
 
+  // variable for nutrtion
+  const calories = data.calories.toFixed();
+  const totalFat = totalNutrients.FAT.quantity.toFixed();
+  const saturatedFat = totalNutrients.FASAT.quantity.toFixed();
+  const transFat = totalNutrients.FATRN
+    ? totalNutrients.FATRN.quantity.toFixed()
+    : 0;
+  const cholestrol = totalNutrients.CHOLE.quantity.toFixed();
+  const sodium = totalNutrients.NA.quantity.toFixed();
+  const totalCarbohydrate = totalNutrients.CHOCDF.quantity.toFixed();
+  const dietaryFiber = totalNutrients.FIBTG.quantity.toFixed();
+  const totalSugar = totalNutrients.SUGAR.quantity.toFixed();
+  const protein = totalNutrients.PROCNT.quantity.toFixed();
+  const vitaminD = totalNutrients.VITD.quantity.toFixed();
+  const calcium = totalNutrients.CA.quantity.toFixed();
+  const iron = totalNutrients.FE.quantity.toFixed();
+  const potassium = totalNutrients.K.quantity.toFixed();
+
+  //variable for daily value
+  const totalFatPercen = totalDaily.FAT.quantity.toFixed();
+  const saturatedPercen = totalDaily.FASAT.quantity.toFixed();
+  const chocolestrolPercen = totalDaily.CHOLE.quantity.toFixed();
+  const sodiumPercen = totalDaily.NA.quantity.toFixed();
+  const totalCarbohydratePercen = totalDaily.CHOCDF.quantity.toFixed();
+  const dietaryFiberPercen = totalDaily.FIBTG.quantity.toFixed();
+  const proteinPercen = totalDaily.PROCNT.quantity.toFixed();
+  const VitaminDPercen = totalDaily.VITD.quantity.toFixed();
+  const calciumPercen = totalDaily.CA.quantity.toFixed();
+  const ironPercen = totalDaily.FE.quantity.toFixed();
+  const potassiumPercen = totalDaily.K.quantity.toFixed();
+
+  // if (props.image.parsed[0].food.image !== undefined) {
+  //   return setImage(props.image.parsed[0].food.image);
+  // } else if (props.image.hints[0].food.image !== undefined) {
+  //   return setImage(props.image.parsed[0].food.image);
+  // } else {
+  //    setImage(props.image.hints[1].food.image);
+  // }
+
+  const photo = () => {
+    return (
+      props.image.parsed[0].food.image ||
+      props.image.hints[0].food.image ||
+      props.image.hints[1].food.image ||
+      props.image.hints[2].food.image ||
+      "NO PHOTO FOUND"
+    );
+  };
 
   return (
     <>
+      <img src={photo()} className="image"></img>
       <section className="nutrition-facts">
         <header className="header">
           <h2 className="title">Nutrition Facts</h2>
           <h2 className="ingredient">{props.ingredient}</h2>
-          <p className="serving-size">Serving Size {props.weight}{props.unit}</p>
+          <p className="serving-size">
+            Serving Size {props.weight}
+            {props.unit}
+          </p>
         </header>
 
         <table className="nutrition-table">
@@ -64,73 +89,81 @@ const SearchIngredient = (props) => {
               </th>
             </tr>
             <tr className="line">
-              <td colSpan={3} className="td">
+              <td colSpan={4} className="td">
                 % Daily Value*
               </td>
             </tr>
             <tr className="line">
-              <th colSpan={2}>
+              <th colSpan={3}>
                 <b>Total Fat</b> {totalFat}g
               </th>
-              <td> {totalFatPercen}%</td>
-            </tr>
-            <tr >
-              <td  className="space-cell"></td>
-              <th className="line">Saturated Fat {saturatedFat}g</th>
-              <td className="line"> {saturatedPercen}%</td>
+              <td className="tdline"> {totalFatPercen}%</td>
             </tr>
             <tr>
               <td className="space-cell"></td>
-              <th className="line" colSpan={2}>Trans Fat {transFat}g</th>
+              <th className="line" colSpan={2}>
+                Saturated Fat {saturatedFat}g
+              </th>
+              <td className="tdline"> {saturatedPercen}%</td>
             </tr>
-            <tr  className="line">
-              <th colSpan={2}>
+            <tr>
+              <td className="space-cell"></td>
+              <th className="line" colSpan={3}>
+                Trans Fat {transFat}g
+              </th>
+            </tr>
+            <tr className="line">
+              <th colSpan={3}>
                 <b>Cholesterol</b> {cholestrol}mg
               </th>
-              <td> {chocolestrolPercen}%</td>
+              <td className="tdline"> {chocolestrolPercen}%</td>
             </tr>
-            <tr  className="line">
-              <th colSpan={2}>
+            <tr className="line">
+              <th colSpan={3}>
                 <b>Sodium</b> {sodium}mg
               </th>
-              <td> {sodiumPercen}%</td>
+              <td className="tdline"> {sodiumPercen}%</td>
             </tr>
-            <tr  className="line">
-              <th colSpan={2}>
+            <tr className="line">
+              <th colSpan={3}>
                 <b>Total Carbohydrate</b> {totalCarbohydrate}g
               </th>
-              <td> {totalCarbohydratePercen}%</td>
+              <td className="tdline"> {totalCarbohydratePercen}%</td>
             </tr>
             <tr>
               <td className="space-cell"></td>
-              <th className="line">Dietry Fiber {dietaryFiber}g</th>
-              <td className="line"> {dietaryFiberPercen}%</td>
+              <th colSpan={2} className="line">
+                Dietry Fiber {dietaryFiber}g
+              </th>
+              <td className="tdline"> {dietaryFiberPercen}%</td>
             </tr>
             <tr>
               <td className="space-cell"></td>
-              <th className="line" colSpan={2}>Sugars {totalSugar}g</th>
+              <th className="line" colSpan={3}>
+                Sugars {totalSugar}g
+              </th>
             </tr>
             <tr className="last">
               <th colSpan={3}>
                 <b>Protein</b> {protein}g
               </th>
-              <td>{proteinPercen}%</td>
+              <td className="tdline">{proteinPercen}%</td>
             </tr>
             <tr className="line">
-              <th colSpan={2}>Vitamin D {vitaminD}µg</th>
-              <td>{VitaminDPercen}%</td>
+              <th colSpan={3}>Vitamin D {vitaminD}µg</th>
+              <td className="tdline">{VitaminDPercen}%</td>
             </tr>
             <tr className="line">
               <th colSpan={3}>Calcium {calcium}mg</th>
-              <td>{calciumPercen}%</td>
+              <td className="tdline">{calciumPercen}%</td>
             </tr>
             <tr className="line">
               <th colSpan={3}>Iron {iron}mg</th>
-              <td>{ironPercen}%</td>
+              <td className="tdline">{ironPercen}%</td>
             </tr>
             <tr className="line">
               <th colSpan={3}>Potassium {potassium}mg</th>
-              <td>{potassiumPercen}%</td>
+              <td className="tdline">{potassiumPercen}%</td>
             </tr>
           </tbody>
         </table>

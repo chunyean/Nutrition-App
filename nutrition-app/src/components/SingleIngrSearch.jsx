@@ -6,7 +6,8 @@ const SingleIngrSearch = () => {
   const [singleIngr, setSingleIngr] = useState("");
   const [ingredient, setIngredient] = useState("");
   const [weight, setWeight] = useState("");
-  const [unit, setUnit] = useState("");
+  const [unit, setUnit] = useState("gm");
+  const [image, setImage] = useState("");
 
   const getData = async () => {
     const res = await fetch(
@@ -14,6 +15,13 @@ const SingleIngrSearch = () => {
     );
     const data = await res.json();
     setSingleIngr(data);
+    getImage();;
+  };
+
+  const getImage = async () => {
+    const res = await fetch(import.meta.env.VITE_IMAGE + ingredient + "&nutrition-type=logging" );
+    const data = await res.json();
+    setImage(data);
   };
 
   const handleOnchange = (e) => {
@@ -28,11 +36,9 @@ const SingleIngrSearch = () => {
 
   const handleClick = (e) => {
     const data = e.target.value;
-    setUnit(data)
-  }
-  // if (!weight.includes(unit)) {
-  //   alert("Unit of measurment is not right");
-  // }
+    setUnit(data);
+  };
+
   return (
     <>
       <div className="container">
@@ -66,12 +72,13 @@ const SingleIngrSearch = () => {
         </div>
       </div>
 
-      {singleIngr && (
+      {singleIngr && image &&(
         <SearchIngredient
           singleIngr={singleIngr}
           weight={weight}
           ingredient={ingredient}
           unit={unit}
+          image={image}
         ></SearchIngredient>
       )}
     </>
