@@ -4,9 +4,10 @@ const Input = (props) => {
   return (
     <>
       <input
-        type="text"
-        className="col-sm-3"
-        onChange={props.handleOnchange}
+        type={props.type}
+        className={props.className}
+        onChange={props.handleOnChange}
+        placeholder={props.placeholder}
       ></input>
     </>
   );

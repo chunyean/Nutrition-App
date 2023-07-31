@@ -11,20 +11,27 @@ const SingleIngrSearch = () => {
 
   const getData = async () => {
     const res = await fetch(
-      import.meta.env.VITE_SINGLEINGRSEARCH + weight + unit + "%20" + ingredient
+      import.meta.env.VITE_NUTRITION +
+        "&nutrition-type=logging&ingr=" +
+        weight +
+        unit +
+        "%20" +
+        ingredient
     );
     const data = await res.json();
     setSingleIngr(data);
-    getImage();;
+    getImage();
   };
 
   const getImage = async () => {
-    const res = await fetch(import.meta.env.VITE_IMAGE + ingredient + "&nutrition-type=logging" );
+    const res = await fetch(
+      import.meta.env.VITE_IMAGE + ingredient + "&nutrition-type=logging"
+    );
     const data = await res.json();
     setImage(data);
   };
 
-  const handleOnchange = (e) => {
+  const handleIngredientChange = (e) => {
     const data = e.target.value;
     setIngredient(data);
   };
@@ -38,6 +45,7 @@ const SingleIngrSearch = () => {
     const data = e.target.value;
     setUnit(data);
   };
+
 
   return (
     <>
@@ -55,24 +63,29 @@ const SingleIngrSearch = () => {
             kg. (Example: 100gm, 1kg and etc) <br />
             Second box is key in ingredient.(Example: chicken, apple and etc)
           </p>
-          <input
+          <Input
             type="text"
             className="col-sm-2"
-            placeholder="Weigth and Unit"
-            onChange={handleWeightChange}
-          ></input>
+            placeholder="Key in ingredient weight"
+            handleOnChange={handleWeightChange}
+          ></Input>
           <select className="col-sm-1" onClick={handleClick}>
             <option>gm</option>
             <option>kg</option>
           </select>
-          <Input handleOnchange={handleOnchange}></Input>
+          <Input
+            type="text"
+            className="col-sm-3"
+            placeholder="Key in ingredient Name"
+            handleOnChange={handleIngredientChange}
+          ></Input>
           <button type="button" className="col-sm-2" onClick={getData}>
             Search
           </button>
         </div>
       </div>
 
-      {singleIngr && image &&(
+      {singleIngr && image && (
         <SearchIngredient
           singleIngr={singleIngr}
           weight={weight}

@@ -4,9 +4,10 @@ import "./table.css";
 const SearchIngredient = (props) => {
   console.log(props.singleIngr);
   console.log(props.weight);
+  console.log(props.ingredient)
   console.log(props.unit);
   console.log(props.image);
-  const [image, setImage] = useState();
+
 
   const data = props.singleIngr;
   const totalNutrients = data.totalNutrients;
@@ -15,7 +16,9 @@ const SearchIngredient = (props) => {
   // variable for nutrtion
   const calories = data.calories.toFixed();
   const totalFat = totalNutrients.FAT.quantity.toFixed();
-  const saturatedFat = totalNutrients.FASAT.quantity.toFixed();
+  const saturatedFat = totalNutrients.FASAT
+    ? totalNutrients.FASAT.quantity.toFixed()
+    : 0;
   const transFat = totalNutrients.FATRN
     ? totalNutrients.FATRN.quantity.toFixed()
     : 0;
@@ -57,7 +60,7 @@ const SearchIngredient = (props) => {
       props.image.hints[0].food.image ||
       props.image.hints[1].food.image ||
       props.image.hints[2].food.image ||
-      "NO PHOTO FOUND"
+      props.image.hints[3].food.image
     );
   };
 
