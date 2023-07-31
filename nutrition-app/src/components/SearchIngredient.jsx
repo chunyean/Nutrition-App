@@ -1,5 +1,5 @@
 import React from "react";
-import "./table.css"
+import "./table.css";
 
 const SearchIngredient = (props) => {
   //   console.log("SearchIngredient", props);
@@ -42,85 +42,87 @@ const SearchIngredient = (props) => {
       <section className="nutrition-facts">
         <header className="header">
           <h2 className="title">Nutrition Facts</h2>
-          <h2>Item need to chnage</h2>
-          <p>Serving Size 100gm</p>
+          <h2 className="ingredient">Item need to chnage</h2>
+          <p className="serving-size">Serving Size 100gm</p>
         </header>
 
         <table className="nutrition-table">
           <thead>
             <tr>
-              <th colSpan={3} className="thed">
+              <th colSpan={3} className="thead">
                 Amount Per Serving
               </th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th colSpan={2} className="calories">
+            <tr className="calories">
+              <th colSpan={2}>
                 <b>Calories ?? kcal</b>
               </th>
             </tr>
-            <tr>
-              <td>% Daily Value*</td>
+            <tr className="line">
+              <td colSpan={3} className="td">
+                % Daily Value*
+              </td>
             </tr>
-            <tr className="fat">
+            <tr className="line">
               <th colSpan={2}>
                 <b>Total Fat</b> ??g
               </th>
               <td> ??%</td>
             </tr>
-            <tr>
-              <td className="space-cell"></td>
-              <th>Saturted Fat ??g</th>
-              <td> ??%</td>
+            <tr >
+              <td  className="space-cell"></td>
+              <th className="line">Saturated Fat ??g</th>
+              <td className="line"> ??%</td>
             </tr>
             <tr>
               <td className="space-cell"></td>
-              <th>Trans Fat ??g</th>
+              <th className="line" colSpan={2}>Trans Fat ??g</th>
             </tr>
-            <tr className="cholesterol">
-              <th>
+            <tr  className="line">
+              <th colSpan={2}>
                 <b>Cholesterol</b> ??mg
               </th>
               <td> ??%</td>
             </tr>
-            <tr className="sodium">
-              <th>
+            <tr  className="line">
+              <th colSpan={2}>
                 <b>Sodium</b> ??mg
               </th>
               <td> ??%</td>
             </tr>
-            <tr className="carbs">
-              <th>
+            <tr  className="line">
+              <th colSpan={2}>
                 <b>Total Carbohydrate</b> ??g
               </th>
               <td> ??%</td>
             </tr>
             <tr>
               <td className="space-cell"></td>
-              <th>Dietry Fiber ??g</th>
-              <td> ??%</td>
+              <th className="line">Dietry Fiber ??g</th>
+              <td className="line"> ??%</td>
             </tr>
             <tr>
               <td className="space-cell"></td>
-              <th>Sugars ??g</th>
+              <th className="line" colSpan={2}>Sugars ??g</th>
             </tr>
-            <tr>
-              <th>
+            <tr className="last">
+              <th colSpan={3}>
                 <b>Protein</b> ??g
               </th>
             </tr>
-            <tr>
-              <th>Vitamin D ??µg</th>
+            <tr className="line">
+              <th colSpan={3}>Vitamin D ??µg</th>
             </tr>
-            <tr>
-              <th>Calcium ??mg</th>
+            <tr className="line">
+              <th colSpan={3}>Calcium ??mg</th>
             </tr>
-            <tr>
-              <th>Iron ??mg</th>
+            <tr className="line">
+              <th colSpan={3}>Iron ??mg</th>
             </tr>
-            <tr>
-              <th>Potassium ??mg</th>
+            <tr className="line">
+              <th colSpan={3}>Potassium ??mg</th>
             </tr>
           </tbody>
         </table>
