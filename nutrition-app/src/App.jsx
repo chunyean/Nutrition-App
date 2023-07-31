@@ -8,8 +8,7 @@ import SearchIngredient from "./components/SearchIngredient";
 function App() {
   return (
     <>
-      {/* <SingleIngrSearch></SingleIngrSearch> */}
-      <SearchIngredient></SearchIngredient>
+      <SingleIngrSearch></SingleIngrSearch>
     </>
   );
 }
