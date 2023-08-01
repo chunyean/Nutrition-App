@@ -1,0 +1,17 @@
+.container {
+  padding: 200px;
+}
+
+.image1 {
+  display: inline;
+  border-radius: 40%;
+  max-height: 400px;
+  max-width: 350px;
+  margin: 10px 10px;
+}
+
+.image2 {
+  border-radius: 40%;
+  max-height: 200px;
+  max-width: 500px;
+}

@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import SearchIngredient from "./SearchIngredient";
 import Input from "./Input";
+import { Link } from "react-router-dom";
 
 const SingleIngrSearch = () => {
   const [singleIngr, setSingleIngr] = useState("");
   const [ingredient, setIngredient] = useState("");
   const [weight, setWeight] = useState("");
   const [unit, setUnit] = useState("gm");
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState();
+  const [showModal, setShowModal] = useState(false);
 
   const getData = async () => {
     const res = await fetch(
@@ -21,6 +23,7 @@ const SingleIngrSearch = () => {
     const data = await res.json();
     setSingleIngr(data);
     getImage();
+    setShowModal();
   };
 
   const getImage = async () => {
@@ -45,7 +48,6 @@ const SingleIngrSearch = () => {
     const data = e.target.value;
     setUnit(data);
   };
-
 
   return (
     <>
@@ -85,15 +87,16 @@ const SingleIngrSearch = () => {
         </div>
       </div>
 
-      {singleIngr && (
+      {showModal && singleIngr && image && (
         <SearchIngredient
-          singleIngr={singleIngr}
+          nutrition={singleIngr}
           weight={weight}
           ingredient={ingredient}
-          unit={unit}
           image={image}
+          setShowModal={setShowModal}
         ></SearchIngredient>
       )}
+      <Link to="/">Exit</Link>
     </>
   );
 };
