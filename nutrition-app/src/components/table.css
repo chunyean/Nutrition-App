@@ -1,6 +1,7 @@
 .image {
   float: left;
-  padding: 150px;
+  padding: 140px;
+  padding-top: 100px;
 }
 
 .nutrition-facts {

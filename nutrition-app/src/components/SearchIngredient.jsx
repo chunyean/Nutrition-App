@@ -72,7 +72,7 @@ const Overlay = (props) => {
   return (
     <div className={styles.backdrop}>
       <div className={styles.modal}>
-        <h5>Searching Result</h5>
+        <h5 className={styles.h5}>Searching Result</h5>
         <button
           type="button"
           class="btn-close"
