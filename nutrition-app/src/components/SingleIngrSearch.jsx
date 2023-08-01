@@ -23,7 +23,7 @@ const SingleIngrSearch = () => {
     const data = await res.json();
     setSingleIngr(data);
     getImage();
-    setShowModal();
+    setShowModal(true);
   };
 
   const getImage = async () => {

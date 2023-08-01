@@ -14,14 +14,14 @@ const SearchIngredient = (props) => {
           image={props.image}
           setShowModal={props.setShowModal}
         ></Overlay>,
-        document.querySeletor("modal-root")
+        document.querySelector("#modal-root")
       )}
     </>
   );
 };
 
 const Overlay = (props) => {
-  const data = props.singleIngr;
+  const data = props.nutrition;
   const totalNutrients = data.totalNutrients;
   const totalDaily = data.totalDaily;
 
@@ -77,7 +77,7 @@ const Overlay = (props) => {
           type="button"
           class="btn-close"
           onClick={() => props.setShowModal(false)}
-        >x</button>
+        ></button>
         <img src={photo()} className="image"></img>
         <section className="nutrition-facts">
           <header className="header">
