@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Input from "./Input";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import "./Input.css";
+import "./Allcomponents.css";
 import PersonalSearchResult from "./PersonalSearchResult";
+import { Link } from "react-router-dom"
 
 const PersonalRecipeSearch = () => {
   const [title, setTitle] = useState("");
@@ -62,35 +62,37 @@ const PersonalRecipeSearch = () => {
   };
 
   return (
-    <>
-      <div className="container-lg">
+    <div className="personal">
+      <div className="containerper">
         <div className="row">
-          <h2>
-            By this page you can check all the nutrition by you own recipe.{" "}
+          <h2 className="h2personal">
+            Search all the nutrition by you own recipe.
             <br />
             Homecook food or any creative dishes by you
           </h2>
-          <h3>Title of Your Own Recipe</h3>
-          <Input
+          </div>
+          <div>
+          <h4>Title of Your Own Recipe</h4>
+          <input
             className="col-sm-3"
             type="text"
-            value={ingredient}
-            placeHolder="Title"
-            handleOnChange={handleTitle}
-          ></Input>
-          <h3>Key in all the weight, unit and ingredient</h3>
+            id="title"
+            placeholder="Title"
+            onChange={handleTitle}
+          ></input>
+          <h4>Key in all the weight, unit and ingredient</h4>
           <Box
             component="form"
             sx={{
-              "& .MuiTextField-root": { m: 1, width: "100ch" },
+              "& .MuiTextField-root": { m: 1, width: "50ch" },
             }}
           >
             <div>
               <TextField
-                className=""
+                className="textField"
                 id="outlined-multiline-static"
                 multiline
-                rows={10}
+                rows={7}
                 placeholder="key in ingredient with weight"
                 onChange={handleChange}
               />
@@ -100,6 +102,12 @@ const PersonalRecipeSearch = () => {
             submit
           </button>
         </div>
+        <Link to="/">
+            <img
+              src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/512/house-icon.png"
+              id="home2"
+            ></img>
+          </Link>
       </div>
       {showModal && nutrition && (
         <PersonalSearchResult
@@ -109,7 +117,7 @@ const PersonalRecipeSearch = () => {
           photo={photo}
         ></PersonalSearchResult>
       )}
-    </>
+    </div>
   );
 };
 

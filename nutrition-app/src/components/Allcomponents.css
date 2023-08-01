@@ -1,0 +1,95 @@
+.single {
+  background-image: url("https://thumbs.dreamstime.com/z/healthy-clean-eating-layout-vegetarian-food-diet-nutrition-concept-various-fresh-vegetables-ingredients-salad-white-105567339.jpg?w=992");
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: 100%;
+  background-attachment: fixed;
+  padding: 110px;
+  padding-bottom: 10px;
+}
+
+#space {
+  margin: auto 5px;
+  padding-bottom: 5px;
+}
+
+.h2title {
+  text-align: center;
+}
+
+.box {
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.row2 {
+  border: 2px solid green;
+  border-style: double;
+  width: 500px;
+  justify-self: center;
+  margin: auto;
+  font-size: 17px;
+}
+
+#btn {
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#home {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.home {
+  display: flex;
+  justify-content: left;
+  padding-left: 150px;
+}
+
+.p1 {
+  font-weight: bold;
+  margin: auto;
+}
+
+#button {
+  float: right;
+  padding: 20px;
+  color: black;
+}
+
+.personal {
+  background-image: url("https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=732&q=80");
+  background-position: center;
+  background-size: 100%;
+  background-attachment: fixed;
+  padding: 88px;
+  padding-bottom: 5px;
+  padding-right: 20px;
+}
+
+.containerper {
+  text-align: right;
+}
+
+.h2personal {
+  font-weight: bold;
+}
+
+.textField {
+  background-color: white;
+}
+
+#home2 {
+  display: flex;
+  justify-content: left;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  left: 400px;
+}

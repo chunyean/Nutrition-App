@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SearchIngredient from "./SearchIngredient";
 import Input from "./Input";
 import { Link } from "react-router-dom";
+import "./Allcomponents.css";
 
 const SingleIngrSearch = () => {
   const [singleIngr, setSingleIngr] = useState("");
@@ -50,40 +51,66 @@ const SingleIngrSearch = () => {
   };
 
   return (
-    <>
+    <div className="single">
       <div className="container">
+        <div>
+          <h2 className="h2title">
+            Searching Nutrition for Individual Ingredient
+          </h2>
+          <div className="box">
+            <p>
+              Hello everyone, from here you can search out all the individual
+              ingredient
+            </p>
+          </div>
+          <div>
+            <div className="row2 justify-content-center">
+              <p className="p1">Below got two typing box.</p>
+              <p>
+                First box is key in ingredient weight with unit. Unit must be gm
+                or kg. (Example: 100gm, 1kg and etc) <br />
+                Second box is key in ingredient.(Example: chicken, apple and
+                etc)
+              </p>
+            </div>
+          </div>
+          <br />
+        </div>
         <div className="row justify-content-md-center">
-          <h2 className="h2title">Searching Nutrition for Single Ingredient</h2>
-          <p>
-            Hello everyone, from here you can search out all the individual
-            ingredient
-          </p>
-          <p>
-            Below got two type box.
-            <br />
-            First box is key in ingredient weight with unit. Unit must be gm or
-            kg. (Example: 100gm, 1kg and etc) <br />
-            Second box is key in ingredient.(Example: chicken, apple and etc)
-          </p>
           <Input
             type="text"
-            className="col-sm-2"
+            id="space"
+            className="col-sm-3"
             placeholder="Key in ingredient weight"
             handleOnChange={handleWeightChange}
           ></Input>
-          <select className="col-sm-1" onClick={handleClick}>
+          <select id="space" className="col-sm-1" onClick={handleClick}>
             <option>gm</option>
             <option>kg</option>
           </select>
+        </div>
+        <br />
+        <div className="row justify-content-md-center">
           <Input
             type="text"
-            className="col-sm-3"
+            id="space"
+            className="col-md-4"
             placeholder="Key in ingredient Name"
             handleOnChange={handleIngredientChange}
           ></Input>
-          <button type="button" className="col-sm-2" onClick={getData}>
+        </div>
+        <div>
+          <button type="button" id="btn" className="col-sm-1 btn btn-outline-info" onClick={getData}>
             Search
           </button>
+        </div>
+        <div className="home">
+          <Link to="/">
+            <img
+              src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/512/house-icon.png"
+              id="home"
+            ></img>
+          </Link>
         </div>
       </div>
 
@@ -91,13 +118,13 @@ const SingleIngrSearch = () => {
         <SearchIngredient
           nutrition={singleIngr}
           weight={weight}
+          unit={unit}
           ingredient={ingredient}
           image={image}
           setShowModal={setShowModal}
         ></SearchIngredient>
       )}
-      <Link to="/">Exit</Link>
-    </>
+    </div>
   );
 };
 

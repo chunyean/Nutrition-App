@@ -1,17 +1,66 @@
-.container {
-  padding: 200px;
+.container1 {
+  text-align: center;
+}
+
+.nutrition {
+  display: inline;
+  width: 400px;
+  float: bottom;
+  object-position: bottom;
+  border-radius: 30%;
 }
 
 .image1 {
-  display: inline;
+  /* object-fit: cover;
+  object-position: top right; */
+  display: block;
   border-radius: 40%;
-  max-height: 400px;
-  max-width: 350px;
+  height: 200px;
+  width: 300px;
   margin: 10px 10px;
 }
 
 .image2 {
+  display: block;
+  float: right;
   border-radius: 40%;
-  max-height: 200px;
-  max-width: 500px;
+  height: 190px;
+  width: 300px;
+  margin: 0px 10px;
+  position: absolute;
+  bottom: 20px;
+  right: 10px
+}
+
+.column1 {
+  float: left;
+  width: 35%;
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.column2 {
+  float: right;
+  width: 65%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.p {
+  font-size: 20px;
+  position: relative;
+  left: 35px;
+}
+
+.p2 {
+  font-size: 20px;
+  position: absolute;
+  bottom: 200px;
+  right: 90px
 }

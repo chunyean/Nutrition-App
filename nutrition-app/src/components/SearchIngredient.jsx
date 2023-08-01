@@ -12,6 +12,7 @@ const SearchIngredient = (props) => {
           weight={props.weight}
           ingredient={props.ingredient}
           image={props.image}
+          unit={props.unit}
           setShowModal={props.setShowModal}
         ></Overlay>,
         document.querySelector("#modal-root")
@@ -72,12 +73,13 @@ const Overlay = (props) => {
   return (
     <div className={styles.backdrop}>
       <div className={styles.modal}>
-        <h5 className={styles.h5}>Searching Result</h5>
         <button
           type="button"
           class="btn-close"
+          id="button"
           onClick={() => props.setShowModal(false)}
         ></button>
+        <h5 className={styles.h5}>Searching Result</h5>
         <img src={photo()} className="image"></img>
         <section className="nutrition-facts">
           <header className="header">

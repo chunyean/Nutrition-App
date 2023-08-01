@@ -60,12 +60,13 @@ const Overlay = (props) => {
   return (
     <div className={styles.backdrop}>
       <div className={styles.modal}>
-        <h5 className={styles.h5}>Searching Result</h5>
         <button
           type="button"
           class="btn-close"
+          id="button"
           onClick={() => props.setShowModal(false)}
         ></button>
+        <h5 className={styles.h5}>Searching Result</h5>
         <img src={props.photo} className={styles.image}></img>
         <section className="nutrition-facts">
           <header className="header">
