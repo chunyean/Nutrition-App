@@ -10,6 +10,7 @@ const PersonalRecipeSearch = () => {
   const [ingredient, setIngredient] = useState("");
   const [nutrition, setNutrition] = useState("");
   const [dataArray, setDataArray] = useState([]);
+  const [showModal, setShowModal] = useState(false)
 
   const getData = async () => {
     const res = await fetch(import.meta.env.VITE_DETAIL, {
@@ -26,6 +27,7 @@ const PersonalRecipeSearch = () => {
     if (res.status === 200) {
       const data = await res.json();
       setNutrition(data);
+      setShowModal(true)
     } else {
       alert("there is an error");
     }
@@ -82,9 +84,10 @@ const PersonalRecipeSearch = () => {
           </button>
         </div>
       </div>
-      {nutrition && <PersonalSearchResult
+      {showModal && nutrition && <PersonalSearchResult
         nutrition={nutrition}
         title={title}
+        setShowModal={setShowModal}
       ></PersonalSearchResult>}
     </>
   );
