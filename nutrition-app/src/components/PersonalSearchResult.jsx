@@ -11,6 +11,7 @@ const PersonalSearchResult = (props) => {
           nutrition={props.nutrition}
           title={props.title}
           setShowModal={props.setShowModal}
+          photo={props.photo}
         ></Overlay>,
         document.querySelector("#modal-root")
       )}
@@ -19,8 +20,6 @@ const PersonalSearchResult = (props) => {
 };
 
 const Overlay = (props) => {
-  // const [photo, setPhoto] = useState();
-
   const data = props.nutrition;
   const totalNutrients = data.totalNutrients;
   const totalDaily = data.totalDaily;
@@ -58,21 +57,6 @@ const Overlay = (props) => {
   const ironPercen = totalDaily.FE.quantity.toFixed();
   const potassiumPercen = totalDaily.K.quantity.toFixed();
 
-  const photo1 =
-    "https://i1.wp.com/www.shiveshskitchen.com/wp-content/uploads/2013/05/Cooking-Methods.jpg?w=500&ssl=1";
-  const photo2 = "https://static2.bigstockphoto.com/0/1/2/large2/210248167.jpg";
-  const photo3 =
-    "https://img.freepik.com/free-photo/top-view-cropped-hands-senior-cook-unrecognizable-cutting-carrot-cooking-vegetable-stew_1098-20510.jpg?size=626&ext=jpg&ga=GA1.1.530369616.1688528886&semt=ais";
-  const photo4 =
-    "https://img.freepik.com/free-photo/young-man-cooking-fresh-food-home-opening-lid-steaming-pot_1220-5383.jpg?w=900&t=st=1690871611~exp=1690872211~hmac=bcf5f21ea9aabe7fd030fb14844d036526800b24c88aa05c3a2487572a41aad8";
-
-  // const randomPhoto = [photo1, photo2, photo3, photo3];
-
-  // const getPhoto = () => {
-  //   const data = Math.floor(Math.random() * randomPhoto.length);
-  //   setPhoto(randomPhoto[data]);
-  // };
-  // getPhoto();
   return (
     <div className={styles.backdrop}>
       <div className={styles.modal}>
@@ -82,9 +66,9 @@ const Overlay = (props) => {
           class="btn-close"
           onClick={() => props.setShowModal(false)}
         ></button>
+        <img src={props.photo} className={styles.image}></img>
         <section className="nutrition-facts">
           <header className="header">
-            {/* <img src={photo} className={styles.image}></img> */}
             <h2 className="title">Nutrition Facts</h2>
             <h2 className="ingredient">{props.title}</h2>
             <p className="serving-size">

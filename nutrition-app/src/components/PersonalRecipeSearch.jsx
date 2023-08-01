@@ -10,7 +10,23 @@ const PersonalRecipeSearch = () => {
   const [ingredient, setIngredient] = useState("");
   const [nutrition, setNutrition] = useState("");
   const [dataArray, setDataArray] = useState([]);
-  const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(false);
+  const [photo, setPhoto] = useState();
+
+  const photo1 =
+    "https://i1.wp.com/www.shiveshskitchen.com/wp-content/uploads/2013/05/Cooking-Methods.jpg?w=500&ssl=1";
+  const photo2 = "https://static2.bigstockphoto.com/0/1/2/large2/210248167.jpg";
+  const photo3 =
+    "https://img.freepik.com/free-photo/top-view-cropped-hands-senior-cook-unrecognizable-cutting-carrot-cooking-vegetable-stew_1098-20510.jpg?size=626&ext=jpg&ga=GA1.1.530369616.1688528886&semt=ais";
+  const photo4 =
+    "https://img.freepik.com/free-photo/young-man-cooking-fresh-food-home-opening-lid-steaming-pot_1220-5383.jpg?w=900&t=st=1690871611~exp=1690872211~hmac=bcf5f21ea9aabe7fd030fb14844d036526800b24c88aa05c3a2487572a41aad8";
+
+  const randomPhoto = [photo1, photo2, photo3, photo3];
+
+  const getPhoto = () => {
+    const data = Math.floor(Math.random() * randomPhoto.length);
+    setPhoto(randomPhoto[data]);
+  };
 
   const getData = async () => {
     const res = await fetch(import.meta.env.VITE_DETAIL, {
@@ -27,7 +43,8 @@ const PersonalRecipeSearch = () => {
     if (res.status === 200) {
       const data = await res.json();
       setNutrition(data);
-      setShowModal(true)
+      setShowModal(true);
+      getPhoto();
     } else {
       alert("there is an error");
     }
@@ -84,11 +101,14 @@ const PersonalRecipeSearch = () => {
           </button>
         </div>
       </div>
-      {showModal && nutrition && <PersonalSearchResult
-        nutrition={nutrition}
-        title={title}
-        setShowModal={setShowModal}
-      ></PersonalSearchResult>}
+      {showModal && nutrition && (
+        <PersonalSearchResult
+          nutrition={nutrition}
+          title={title}
+          setShowModal={setShowModal}
+          photo={photo}
+        ></PersonalSearchResult>
+      )}
     </>
   );
 };
