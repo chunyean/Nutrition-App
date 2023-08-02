@@ -25,37 +25,37 @@ const Overlay = (props) => {
   const totalDaily = data.totalDaily;
 
   // variable for nutrtion
-  const calories = data.calories.toFixed();
-  const totalFat = totalNutrients.FAT.quantity.toFixed();
+  const calories = data.calories.toFixed() || 0;
+  const totalFat = totalNutrients.FAT.quantity.toFixed() || 0;
   const saturatedFat = totalNutrients.FASAT
     ? totalNutrients.FASAT.quantity.toFixed()
     : 0;
   const transFat = totalNutrients.FATRN
     ? totalNutrients.FATRN.quantity.toFixed()
     : 0;
-  const cholestrol = totalNutrients.CHOLE.quantity.toFixed();
-  const sodium = totalNutrients.NA.quantity.toFixed();
-  const totalCarbohydrate = totalNutrients.CHOCDF.quantity.toFixed();
-  const dietaryFiber = totalNutrients.FIBTG.quantity.toFixed();
-  const totalSugar = totalNutrients.SUGAR.quantity.toFixed();
-  const protein = totalNutrients.PROCNT.quantity.toFixed();
-  const vitaminD = totalNutrients.VITD.quantity.toFixed();
-  const calcium = totalNutrients.CA.quantity.toFixed();
-  const iron = totalNutrients.FE.quantity.toFixed();
-  const potassium = totalNutrients.K.quantity.toFixed();
+  const cholestrol = totalNutrients.CHOLE.quantity.toFixed() || 0;
+  const sodium = totalNutrients.NA.quantity.toFixed() || 0;
+  const totalCarbohydrate = totalNutrients.CHOCDF.quantity.toFixed() || 0;
+  const dietaryFiber = totalNutrients.FIBTG.quantity.toFixed() || 0;
+  const totalSugar = totalNutrients.SUGAR.quantity.toFixed() || 0;
+  const protein = totalNutrients.PROCNT.quantity.toFixed() || 0;
+  const vitaminD = totalNutrients.VITD.quantity.toFixed() || 0;
+  const calcium = totalNutrients.CA.quantity.toFixed() || 0;
+  const iron = totalNutrients.FE.quantity.toFixed() || 0;
+  const potassium = totalNutrients.K.quantity.toFixed() || 0;
 
   //variable for daily value
-  const totalFatPercen = totalDaily.FAT.quantity.toFixed();
-  const saturatedPercen = totalDaily.FASAT.quantity.toFixed();
-  const chocolestrolPercen = totalDaily.CHOLE.quantity.toFixed();
-  const sodiumPercen = totalDaily.NA.quantity.toFixed();
-  const totalCarbohydratePercen = totalDaily.CHOCDF.quantity.toFixed();
-  const dietaryFiberPercen = totalDaily.FIBTG.quantity.toFixed();
-  const proteinPercen = totalDaily.PROCNT.quantity.toFixed();
-  const VitaminDPercen = totalDaily.VITD.quantity.toFixed();
-  const calciumPercen = totalDaily.CA.quantity.toFixed();
-  const ironPercen = totalDaily.FE.quantity.toFixed();
-  const potassiumPercen = totalDaily.K.quantity.toFixed();
+  const totalFatPercen = totalDaily.FAT.quantity.toFixed() || 0;
+  const saturatedPercen = totalDaily.FASAT.quantity.toFixed() || 0;
+  const chocolestrolPercen = totalDaily.CHOLE.quantity.toFixed() || 0;
+  const sodiumPercen = totalDaily.NA.quantity.toFixed() || 0;
+  const totalCarbohydratePercen = totalDaily.CHOCDF.quantity.toFixed() || 0;
+  const dietaryFiberPercen = totalDaily.FIBTG.quantity.toFixed() || 0;
+  const proteinPercen = totalDaily.PROCNT.quantity.toFixed() || 0;
+  const VitaminDPercen = totalDaily.VITD.quantity.toFixed() || 0;
+  const calciumPercen = totalDaily.CA.quantity.toFixed() || 0;
+  const ironPercen = totalDaily.FE.quantity.toFixed() || 0;
+  const potassiumPercen = totalDaily.K.quantity.toFixed() || 0;
 
   return (
     <div className={styles.backdrop}>

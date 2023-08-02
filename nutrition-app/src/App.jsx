@@ -5,12 +5,13 @@ import SingleIngrSearch from "./components/SingleIngrSearch";
 import PersonalRecipeSearch from "./components/PersonalRecipeSearch";
 import Landing from "./components/Landing";
 import StandardRecipe from "./components/StandardRecipe";
+import RecipeDetails from "./components/RecipeDetails";
 
 function App() {
 
   return (
     <>
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Landing></Landing>} />
         <Route
           path="/single-ingredient-search"
@@ -20,8 +21,11 @@ function App() {
           path="/personal-recipe-search"
           element={<PersonalRecipeSearch></PersonalRecipeSearch>}
         />
-      </Routes> */}
-      <StandardRecipe></StandardRecipe>
+        <Route
+          path="/standard-recipe-search"
+          element={<StandardRecipe></StandardRecipe>}
+        />
+      </Routes>
     </>
   );
 }

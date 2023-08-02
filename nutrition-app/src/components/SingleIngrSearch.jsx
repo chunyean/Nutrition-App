@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SearchIngredient from "./SearchIngredient";
-import Input from "./Input";
+
 import { Link } from "react-router-dom";
 import "./Allcomponents.css";
 import NutritionFact from "./NutritionFact";
@@ -53,9 +53,9 @@ const SingleIngrSearch = () => {
 
   return (
     <div className="single">
-      <div className="container">
+      <div className="container md">
         <div>
-          <h2 className="h2title">
+          <h2 className="h2title md">
             Searching Nutrition for Individual Ingredient
           </h2>
           <div className="box">
@@ -65,7 +65,7 @@ const SingleIngrSearch = () => {
             </p>
           </div>
           <div>
-            <div className="row2 justify-content-center">
+            <div className="row2 md">
               <p className="p1">Below got two typing box.</p>
               <p>
                 First box is key in ingredient weight with unit. Unit must be gm
@@ -78,13 +78,13 @@ const SingleIngrSearch = () => {
           <br />
         </div>
         <div className="row justify-content-md-center">
-          <Input
+          <input
             type="text"
             id="space"
-            className="col-sm-3"
+            className="col-md-3"
             placeholder="Key in ingredient weight"
             handleOnChange={handleWeightChange}
-          ></Input>
+          ></input>
           <select id="space" className="col-sm-1" onClick={handleClick}>
             <option>gm</option>
             <option>kg</option>
@@ -92,20 +92,25 @@ const SingleIngrSearch = () => {
         </div>
         <br />
         <div className="row justify-content-md-center">
-          <Input
+          <input
             type="text"
             id="space"
             className="col-md-4"
             placeholder="Key in ingredient Name"
             handleOnChange={handleIngredientChange}
-          ></Input>
+          ></input>
         </div>
         <div>
-          <button type="button" id="btn" className="col-sm-1 btn btn-outline-info" onClick={getData}>
+          <button
+            type="button"
+            id="btn"
+            className="col-md-1 btn btn-outline-info"
+            onClick={getData}
+          >
             Search
           </button>
         </div>
-        <div className="home">
+        <div className="home md">
           <Link to="/">
             <img
               src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/512/house-icon.png"
@@ -125,8 +130,14 @@ const SingleIngrSearch = () => {
           setShowModal={setShowModal}
         ></NutritionFact>
       )}
-      <script type="text/javascript" async id="bmr-calculator" data-type="verywell-tool" data-vertical="verywellfit" src="https://www.verywellfit.com/static/5.41.0/components/tools/calculators/iframe-embed/embed.min.js?id=bmr-calculator"></script>
-
+      <script
+        type="text/javascript"
+        async
+        id="bmr-calculator"
+        data-type="verywell-tool"
+        data-vertical="verywellfit"
+        src="https://www.verywellfit.com/static/5.41.0/components/tools/calculators/iframe-embed/embed.min.js?id=bmr-calculator"
+      ></script>
     </div>
   );
 };

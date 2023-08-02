@@ -15,11 +15,8 @@
 }
 
 .image {
-  width: 25rem;
-  height: 18.75rem;
-  position: absolute;
-  top: 6.25rem;
-  left: 6.25rem;
+  margin: 10% 10%;
+  padding-left: 10%;
 }
 
 .modal {

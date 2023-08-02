@@ -5,13 +5,13 @@
   background-position: center;
   background-size: 100%;
   background-attachment: fixed;
-  padding: 110px;
-  padding-bottom: 10px;
+  padding: 6.3%;
+  padding-bottom: 0%;
 }
 
 #space {
-  margin: auto 5px;
-  padding-bottom: 5px;
+  margin: auto 1%;
+  padding-bottom: 1%;
 }
 
 .h2title {
@@ -19,31 +19,32 @@
 }
 
 .box {
-  padding: 10px;
+  padding: 1%;
   text-align: center;
-  font-size: 20px;
+  font-size: 1.5rem;
 }
 
 .row2 {
   border: 2px solid green;
   border-style: double;
-  width: 500px;
+  width: 50%;
   justify-self: center;
   margin: auto;
-  font-size: 17px;
+  font-size: 1.05rem;
 }
 
 #btn {
-  margin: 10px auto;
+  margin: 1% auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 #home {
-  width: 50px;
-  height: 50px;
+  width: 15%;
+  height: 100%;
   position: relative;
+  bottom: 5%;
 }
 
 .home {
@@ -59,7 +60,7 @@
 
 #button {
   float: right;
-  padding: 20px;
+  padding: 1%;
   color: black;
 }
 
@@ -68,9 +69,9 @@
   background-position: center;
   background-size: 100%;
   background-attachment: fixed;
-  padding: 88px;
-  padding-bottom: 5px;
-  padding-right: 20px;
+  padding: 5.5%;
+  padding-bottom: 1%;
+  padding-right: 2%;
 }
 
 .containerper {
@@ -88,8 +89,51 @@
 #home2 {
   display: flex;
   justify-content: left;
-  width: 50px;
-  height: 50px;
+  width: 6%;
+  height: 6%;
   position: relative;
-  left: 400px;
+  left: 35%;
+}
+
+.standard {
+  background-image: url("https://img.freepik.com/free-photo/healthy-green-vegetarian-buddha-bowl-lunch-with-eggs-rice-tomato-avocado-blue-cheese-table_2829-18801.jpg?w=900&t=st=1690993707~exp=1690994307~hmac=587831ef170689672848be885c61b9f6cc994011164072196d293e6f436ff34a");
+  background-position: right;
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
+.container3 {
+  text-align: left;
+  padding: 5% 2%;
+}
+
+#home3 {
+  display: block;
+  position: relative;
+  width: 6%;
+  height: 6%;
+  left: 45%;
+  margin-bottom: 0%;
+}
+
+.title2 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.detail {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.recipeImg {
+  padding-top: 10%;
+  padding-left: 25%;
+}
+
+#detail{
+  font-size: 1.5rem;
+  padding-left: 30%;
 }

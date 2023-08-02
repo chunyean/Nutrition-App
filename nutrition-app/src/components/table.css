@@ -1,17 +1,17 @@
 .image {
   float: left;
-  padding: 10rem;
+  padding: 1rem;
   padding-top: 10rem;
 }
 
 .nutrition-facts {
   border: 1px solid blue;
-  width: 25rem;
+  width: 80%;
   padding: 0.5rem;
   background-color: white;
-  margin: 1rem auto;
-  position: absolute;
-  right: 6.25rem;
+  position: relative;
+  top:5%;
+
 }
 
 .title {
@@ -66,4 +66,9 @@
 .tdline {
   border-bottom: 1px solid blue;
   text-align: right;
+}
+
+#column {
+  float: left;
+  width: 50%;
 }

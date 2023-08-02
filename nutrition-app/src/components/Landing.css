@@ -4,32 +4,41 @@
 
 .nutrition {
   display: inline;
-  width: 400px;
+  width: 100%;
   float: bottom;
   object-position: bottom;
   border-radius: 30%;
 }
 
 .image1 {
-  /* object-fit: cover;
-  object-position: top right; */
   display: block;
+  position: relative;
   border-radius: 40%;
-  height: 200px;
-  width: 300px;
-  margin: 10px 10px;
+  height: 50%;
+  width: 45%;
+  padding-top: 3%;
 }
 
 .image2 {
   display: block;
+  border-radius: 40%;
+  height: 40%;
+  width: 40%;
+  margin: 0% 1%;
+  position: relative;
+  bottom: 1%;
+  right: 1%;
+}
+
+.image3 {
+  display: block;
+  position: absolute;
+  top: 20%;
+  right: 2%;
   float: right;
   border-radius: 40%;
-  height: 190px;
-  width: 300px;
-  margin: 0px 10px;
-  position: absolute;
-  bottom: 20px;
-  right: 10px
+  height: 50%;
+  width: 30%;
 }
 
 .column1 {
@@ -53,14 +62,23 @@
 }
 
 .p {
-  font-size: 20px;
+  font-size: 1.5rem;
+  font-weight: 400;
   position: relative;
-  left: 35px;
+  left: 2%;
 }
 
 .p2 {
-  font-size: 20px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  position: relative;
+  left: 9%;
+}
+
+.p3 {
+  font-size: 1.5rem;
+  font-weight: 400;
   position: absolute;
-  bottom: 200px;
-  right: 90px
+  right: 11%;
+  bottom: 20%;
 }

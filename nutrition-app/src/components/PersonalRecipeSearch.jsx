@@ -63,10 +63,10 @@ const PersonalRecipeSearch = () => {
   };
 
   return (
-    <div className="personal">
-      <div className="containerper">
-        <div className="row">
-          <h2 className="h2personal">
+    <div className="personal md">
+      <div className="containerper md">
+        <div className="row md">
+          <h2 className="h2personal md">
             Search all the nutrition by you own recipe.
             <br />
             Homecook food or any creative dishes by you
@@ -75,7 +75,7 @@ const PersonalRecipeSearch = () => {
           <div>
           <h4>Title of Your Own Recipe</h4>
           <input
-            className="col-sm-3"
+            className="col-md-3"
             type="text"
             id="title"
             placeholder="Title"
@@ -99,7 +99,7 @@ const PersonalRecipeSearch = () => {
               />
             </div>
           </Box>
-          <button className="col-sm-2" type="button" onClick={getData}>
+          <button className="col-md-2 btn btn-info" type="button" onClick={getData}>
             submit
           </button>
         </div>

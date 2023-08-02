@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import Input from "@mui/base/Input";
 import RecipeSearch from "./RecipeSearch";
+import { Link } from "react-router-dom";
 
 const StandardRecipe = () => {
   const [recipe, setRecipe] = useState("");
   const [mainIngr, setMainIngr] = useState("pork");
-  const [numIngr, setNumIngr] = useState(3);
+  const [numIngr, setNumIngr] = useState(4);
   const [cuisine, setCuisine] = useState("Chinese");
   const [mealType, setMealType] = useState("Lunch");
 
@@ -45,6 +45,7 @@ const StandardRecipe = () => {
         mealType +
         "&imageSize=REGULAR"
     );
+
     const data = await res.json();
     setRecipe(data);
   };
@@ -70,52 +71,64 @@ const StandardRecipe = () => {
   };
 
   return (
-    <div className="container-md lg xl xxl">
-      <div className="row-md lg xl xxl">
-        <h3>You can search any recipe by fill up the part at below</h3>
-      </div>
-      <div className="container-md lg xl xxl">
-        <h5>Main Ingredient</h5>
-        <Input
-          type="text"
-          className="focus:shadow-outline-purple"
-          placeholder="ex: chicken, pork"
-          onChange={handleMainIngr}
-        />
-        <h5>Number of Ingredient</h5>
-        <Input
-          type="text"
-          className="text"
-          placeholder="ex: 1,2,3 or 2-5"
-          onChange={handleNumIngr}
-        ></Input>
-        <h5>Select Cuisine</h5>
-        <select onClick={handleCuisine}>
-          {cuisineType.map((item, idx) => {
-            return (
-              <option key={idx} id={idx}>
-                {item}
-              </option>
-            );
-          })}
-        </select>
-        <h5>Type of Meal</h5>
-        <select onClick={handleMealType}>
-          {typeOfMeal.map((item, idx) => {
-            return (
-              <option key={idx} id={idx}>
-                {item}
-              </option>
-            );
-          })}
-        </select>
+    <div className="standard">
+      <div className="container3 md lg xl xxl">
+        <div className="row-md lg xl xxl">
+          <h3>
+            You can search any recipe by fill up the part
+            <br /> at below:
+          </h3>
+        </div>
         <br />
-        <br />
-        <button type="button" onClick={getData}>
-          Submit
-        </button>
+        <div className="container-md lg xl xxl">
+          <h5>Main Ingredient</h5>
+          <input
+            type="text"
+            className="focus:shadow-outline-purple"
+            placeholder="ex: chicken, pork"
+            onChange={handleMainIngr}
+          />
+          <h5>Number of Ingredient</h5>
+          <input
+            type="text"
+            className="text"
+            placeholder="ex: 1,2,3 or 2-5"
+            onChange={handleNumIngr}
+          ></input>
+          <h5>Select Cuisine</h5>
+          <select onChange={handleCuisine}>
+            {cuisineType.map((item, idx) => {
+              return (
+                <option key={idx} id={idx}>
+                  {item}
+                </option>
+              );
+            })}
+          </select>
+          <h5>Type of Meal</h5>
+          <select onChange={handleMealType}>
+            {typeOfMeal.map((item, idx) => {
+              return (
+                <option key={idx} id={idx}>
+                  {item}
+                </option>
+              );
+            })}
+          </select>
+          <br />
+          <br />
+          <button className="btn btn-info" type="button" onClick={getData}>
+            Submit
+          </button>
+        </div>
+        <Link to="/">
+          <img
+            src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/512/house-icon.png"
+            id="home3"
+          ></img>
+        </Link>
+        {recipe && <RecipeSearch recipe={recipe}></RecipeSearch>}
       </div>
-      {recipe && <RecipeSearch recipe={recipe}></RecipeSearch>}
     </div>
   );
 };
