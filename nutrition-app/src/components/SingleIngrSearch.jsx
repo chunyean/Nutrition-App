@@ -3,6 +3,7 @@ import SearchIngredient from "./SearchIngredient";
 import Input from "./Input";
 import { Link } from "react-router-dom";
 import "./Allcomponents.css";
+import NutritionFact from "./NutritionFact";
 
 const SingleIngrSearch = () => {
   const [singleIngr, setSingleIngr] = useState("");
@@ -115,15 +116,17 @@ const SingleIngrSearch = () => {
       </div>
 
       {showModal && singleIngr && image && (
-        <SearchIngredient
+        <NutritionFact
           nutrition={singleIngr}
           weight={weight}
           unit={unit}
-          ingredient={ingredient}
+          title={ingredient}
           image={image}
           setShowModal={setShowModal}
-        ></SearchIngredient>
+        ></NutritionFact>
       )}
+      <script type="text/javascript" async id="bmr-calculator" data-type="verywell-tool" data-vertical="verywellfit" src="https://www.verywellfit.com/static/5.41.0/components/tools/calculators/iframe-embed/embed.min.js?id=bmr-calculator"></script>
+
     </div>
   );
 };

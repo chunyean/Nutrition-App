@@ -1,17 +1,17 @@
 .image {
   float: left;
-  padding: 140px;
-  padding-top: 100px;
+  padding: 10rem;
+  padding-top: 10rem;
 }
 
 .nutrition-facts {
   border: 1px solid blue;
-  width: 400px;
-  padding: 5px;
+  width: 25rem;
+  padding: 0.5rem;
   background-color: white;
-  margin: 10px auto;
-  position:absolute;
-  right:100px;
+  margin: 1rem auto;
+  position: absolute;
+  right: 6.25rem;
 }
 
 .title {

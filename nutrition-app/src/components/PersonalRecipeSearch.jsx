@@ -4,6 +4,7 @@ import TextField from "@mui/material/TextField";
 import "./Allcomponents.css";
 import PersonalSearchResult from "./PersonalSearchResult";
 import { Link } from "react-router-dom"
+import NutritionFact from "./NutritionFact";
 
 const PersonalRecipeSearch = () => {
   const [title, setTitle] = useState("");
@@ -110,12 +111,12 @@ const PersonalRecipeSearch = () => {
           </Link>
       </div>
       {showModal && nutrition && (
-        <PersonalSearchResult
+        <NutritionFact  
           nutrition={nutrition}
           title={title}
           setShowModal={setShowModal}
           photo={photo}
-        ></PersonalSearchResult>
+        ></NutritionFact>
       )}
     </div>
   );
