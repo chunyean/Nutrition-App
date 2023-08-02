@@ -4,12 +4,13 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import SingleIngrSearch from "./components/SingleIngrSearch";
 import PersonalRecipeSearch from "./components/PersonalRecipeSearch";
 import Landing from "./components/Landing";
+import StandardRecipe from "./components/StandardRecipe";
 
 function App() {
 
   return (
     <>
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<Landing></Landing>} />
         <Route
           path="/single-ingredient-search"
@@ -19,7 +20,8 @@ function App() {
           path="/personal-recipe-search"
           element={<PersonalRecipeSearch></PersonalRecipeSearch>}
         />
-      </Routes>
+      </Routes> */}
+      <StandardRecipe></StandardRecipe>
     </>
   );
 }
