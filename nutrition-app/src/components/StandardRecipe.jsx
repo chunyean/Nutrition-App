@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Input from "@mui/base/Input";
-import RecipeResult from "./RecipeResult";
+import RecipeSearch from "./RecipeSearch";
 
 const StandardRecipe = () => {
   const [recipe, setRecipe] = useState("");
-  const [mainIngr, setMainIngr] = useState("");
-  const [numIngr, setNumIngr] = useState();
-  const [cuisine, setCuisine] = useState("");
-  const [mealType, setMealType] = useState("");
+  const [mainIngr, setMainIngr] = useState("pork");
+  const [numIngr, setNumIngr] = useState(3);
+  const [cuisine, setCuisine] = useState("Chinese");
+  const [mealType, setMealType] = useState("Lunch");
 
   const cuisineType = [
     "",
@@ -18,7 +18,7 @@ const StandardRecipe = () => {
     "Central Europe",
     "Chinese",
     "Eastern Europe",
-    "Frech",
+    "French",
     "Indian",
     "Italian",
     "Japanese",
@@ -37,7 +37,7 @@ const StandardRecipe = () => {
     const res = await fetch(
       import.meta.env.VITE_RECIPE +
         mainIngr +
-        "&app_id=49aafab7&app_key=d73fbaad7c9f0874fe490b07de22a5d7&" +
+        import.meta.env.VITE_RECIPE_APIKEY +
         numIngr +
         "&cuisineType=" +
         cuisine +
@@ -115,7 +115,7 @@ const StandardRecipe = () => {
           Submit
         </button>
       </div>
-      {recipe && <RecipeResult recipe={recipe}></RecipeResult>}
+      {recipe && <RecipeSearch recipe={recipe}></RecipeSearch>}
     </div>
   );
 };

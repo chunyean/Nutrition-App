@@ -31,6 +31,9 @@ const Overlay = (props) => {
   const saturatedFat = totalNutrients.FASAT
     ? totalNutrients.FASAT.quantity.toFixed()
     : 0;
+
+  const saturatedFat2 = totalNutrients?.FASAT?.quantity || 0;
+
   const transFat = totalNutrients.FATRN
     ? totalNutrients.FATRN.quantity.toFixed()
     : 0;

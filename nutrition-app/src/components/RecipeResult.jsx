@@ -1,18 +1,20 @@
 import React from "react";
+import ImageListItem from "@mui/material/ImageListItem";
+import { ImageListItemBar } from "@mui/material";
 
 const RecipeResult = (props) => {
-  const data = props.recipe;
   return (
-    <div>
-      <select>
-        {data.hits.map((item) => {
-          return (
-            <option value={item.recipe.label}>
-              {item.recipe.label} <img src={item.recipe.images.SMALL.url}></img>
-            </option>
-          );
-        })}
-      </select>
+    <div onClick={() => props.onClick(props.item)}>
+      <ImageListItem>
+        <img
+          key={props.key}
+          id={props.id}
+          src={props.item.recipe.image}
+          loading="lazy"
+          //   title={props.item}
+        />
+        <ImageListItemBar title={props.item.recipe.label} />
+      </ImageListItem>
     </div>
   );
 };
