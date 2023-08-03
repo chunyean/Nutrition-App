@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Landing.css";
+import Calculator from "../Calculator/Calculator";
 
 const Navigation = () => {
   return (
@@ -39,7 +40,13 @@ const Navigation = () => {
             ></img>
           </Link>
           <p className="p3">Standard Recipe</p>
-          <div className="col-md-4"></div>
+          <Link to="/calculator">
+            <img
+              src="https://cdn2.iconfinder.com/data/icons/ios7-inspired-mac-icon-set/512/Calculator_512.png"
+              className="image4"
+            ></img>
+          </Link>
+          <p className="p4">Calculator</p>
         </div>
       </div>
     </>

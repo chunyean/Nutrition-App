@@ -82,3 +82,56 @@
   right: 11%;
   bottom: 20%;
 }
+
+.container4 {
+  background-color: #bcddd4;
+}
+
+.boxx {
+  background-color: aliceblue;
+  text-align: center;
+  margin: 35px 40px
+}
+
+
+.input{
+  margin: 5px 5px;
+  padding-left: 34%;
+}
+
+.result{
+  text-align: center;
+  margin: auto;
+}
+
+.button3 {
+  margin: 15px 10px;
+  width: 100px;
+}
+
+#home4{
+  display: block;
+  position: absolute;
+  right: 5%;
+  bottom: 10%;
+  width: 7%;
+  height: 15%;
+}
+
+.image4 {
+  display: block;
+  position: absolute;
+  top: 78%;
+  right: 2%;
+  float: right;
+  border-radius: 40%;
+  height: 50%;
+  width: 30%;
+}
+.p4{
+  font-size: 1.5rem;
+  font-weight: 400;
+  position: absolute;
+  right: 13%;
+  top: 124%;
+}

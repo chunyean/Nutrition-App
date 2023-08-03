@@ -1,33 +1,32 @@
 import React, { useState } from "react";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import "../SingleIngredient/Landing.css";
+import { Link } from"react-router-dom"
 
 const Calculator = () => {
   const [calories, setCalories] = useState();
-  const [gender, setGender] = useState();
-  const [height, setHeight] = useState(175);
-  const [weight, setWeight] = useState(70);
-  const [age, setAge] = useState(30);
-  const [exercise, setExercise] = useState();
+  const [gender, setGender] = useState("male");
+  const [height, setHeight] = useState();
+  const [weight, setWeight] = useState();
+  const [age, setAge] = useState("");
+  const [exercise, setExercise] = useState(1.2);
   const [bmi, setBmi] = useState();
 
-  const maleCaloriesCals = () => {
+  const femaleCaloriesCals = () => {
     const bmr = 655.1 + 9.563 * weight + 1.85 * height - 4.676 * age;
     const amr = bmr * exercise;
     const bodyMass = (weight / height / height) * 10000;
-    setBmi(bodyMass.toFixed());
-    setCalories(amr.toFixed(1));
+    setBmi(bodyMass.toFixed(1));
+    setCalories(amr.toFixed());
   };
 
-  const femaleCaloriesCals = () => {
+  const maleCaloriesCals = () => {
     const bmr = 66.47 + 13.75 * weight + 5.003 * height - 6.755 * age;
     const amr = bmr * exercise;
     const bodyMass = (weight / height / height) * 10000;
-    setBmi(bodyMass.toFixed());
-    setCalories(amr.toFixed(1));
+    setBmi(bodyMass.toFixed(1));
+    setCalories(amr.toFixed());
   };
 
   const handleGenderChange = (event) => {
@@ -35,42 +34,101 @@ const Calculator = () => {
   };
 
   const handleHeightChange = (e) => {
-    setHeight(e.target.value)
-  }
+    setHeight(e.target.value);
+  };
 
   const handleWeightChange = (e) => {
-    setWeight(e.target.value)
-  }
+    setWeight(e.target.value);
+  };
 
   const handleAgeChange = (e) => {
-    setAge(e.target.value)
-  }
+    setAge(e.target.value);
+  };
 
   const handleExerciseChange = (e) => {
-    setExercise(e.target.value)
-  }
+    setExercise(e.target.value);
+  };
 
-  if( weight && height && age && exercise && gender === male){
-    return maleCaloriesCals()
-  } else if ( weight && height && age && exercise && gender === female){
-    return femaleCaloriesCals()
-  }
-
-
+  const handleClicked = (e) => {
+    if (weight && height && age && exercise && gender === "male") {
+      return maleCaloriesCals();
+    } else {
+      return femaleCaloriesCals();
+    }
+  };
 
   return (
-    <FormControl>
-      <FormLabel id="demo-row-radio-buttons-group-label">Gender</FormLabel>
-      <RadioGroup
-        row
-        aria-labelledby="demo-row-radio-buttons-group-label"
-        name="row-radio-buttons-group"
-        onChange={handleGenderChange}
-      >
-        <FormControlLabel value="female" control={<Radio />} label="Female" />
-        <FormControlLabel value="male" control={<Radio />} label="Male" />
-      </RadioGroup>
-    </FormControl>
+    <div className="container4 md">
+      <div className="boxx md">
+        <div className="col-md-12">
+          <h2>Calories Calculator</h2>
+          <h4>
+            Use this calorie calculator to find out how many calories you really
+            need per day!
+          </h4>
+          <div className="row"></div>
+          <select className="gender col-md-1" onChange={handleGenderChange}>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+          <Box
+            component="form"
+            sx={{
+              "& .MuiTextField-root": { m: 1, width: "40ch" },
+            }}
+            noValidate
+            autoComplete="off"
+          >
+            <div className="input col-md-6">
+              <TextField
+                id="outlined-search"
+                label="Age"
+                type="text"
+                onChange={handleAgeChange}
+              />
+              <TextField
+                id="outlined-search"
+                label="Height in cm"
+                type="text"
+                onChange={handleHeightChange}
+              />
+              <TextField
+                id="outlined-search"
+                label="Weight in kg"
+                type="text"
+                onChange={handleWeightChange}
+              />
+            </div>
+          </Box>
+          <select className="select" onChange={handleExerciseChange}>
+            <option value={1.2}>Sedentary (little or no exercise)</option>
+            <option value={1.375}>
+              Lightly active (exercise 1–3 days/week)
+            </option>
+            <option value={1.55}>
+              Moderately active (exercise 3–5 days/week)
+            </option>
+            <option value={1.725}>Active (exercise 6–7 days/week)</option>
+            <option value={1.9}>
+              Very active (hard exercise 6–7 days/week)
+            </option>
+          </select>
+        </div>
+        <button className="button3 md btn btn-success" onClick={handleClicked}>
+          Submit
+        </button>
+        <div className="result">
+          <h4>Calories per day: {calories}</h4>
+          <h4>BMI: {bmi}</h4>
+        </div>
+      </div>
+      <Link to="/">
+          <img
+            src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/512/house-icon.png"
+            id="home4"
+          ></img>
+        </Link>
+    </div>
   );
 };
 

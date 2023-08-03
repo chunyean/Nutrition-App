@@ -26,8 +26,12 @@ function App() {
           path="/standard-recipe-search"
           element={<StandardRecipe></StandardRecipe>}
         />
+        <Route
+          path="/calculator"
+          element={<Calculator></Calculator>}
+        />
       </Routes>
-      <Calculator></Calculator>
+
     </>
   );
 }

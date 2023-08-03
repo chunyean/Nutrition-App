@@ -87,7 +87,7 @@ const PersonalRecipeSearch = () => {
           <h4>
             Key in all the weight, unit and ingredient
             <br />
-            ex: 100gm chicken thight
+            ex: 100gm chicken breast
             <br />
             100gm white rice
           </h4>
