@@ -1,13 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ReactDOM from "react-dom";
-import styles from "./Modal.module.css";
+import styles from "../SingleIngredient/Modal.module.css";
 
 const RecipeDetails = (props) => {
   return (
     <>
       {ReactDOM.createPortal(
-        <Overlay item={props.imageData}></Overlay>,
+        <Overlay
+          item={props.imageData}
+          setShowModal={props.setShowModal}
+        ></Overlay>,
         document.querySelector("#modal-root")
       )}
     </>
@@ -23,36 +26,36 @@ const Overlay = (props) => {
   const url = data.recipe.url;
   const ingredient = data.recipe.ingredientLines;
   const cuisine = data.recipe?.cuisineType[0] || 0;
-  const weight = data.recipe.totalWeight.toFixed()
+  const weight = data.recipe?.totalWeight.toFixed();
 
-  const calories = data.recipe.calories.toFixed() || 0;
-  const totalFat = totalNutrients?.FAT.quantity.toFixed() || 0;
-  const saturatedFat = totalNutrients.FASAT.quantity.toFixed() || 0;
+  const calories = data.recipe?.calories.toFixed() || 0;
+  const totalFat = totalNutrients?.FAT?.quantity.toFixed() || 0;
+  const saturatedFat = totalNutrients?.FASAT?.quantity.toFixed() || 0;
 
-  const transFat = totalNutrients.FATRN.quantity.toFixed() || 0;
-  const cholestrol = totalNutrients.CHOLE.quantity.toFixed() || 0;
-  const sodium = totalNutrients.NA.quantity.toFixed() || 0;
-  const totalCarbohydrate = totalNutrients.CHOCDF.quantity.toFixed() || 0;
-  const dietaryFiber = totalNutrients.FIBTG.quantity.toFixed() || 0;
-  const totalSugar = totalNutrients.SUGAR.quantity.toFixed() || 0;
-  const protein = totalNutrients.PROCNT.quantity.toFixed() || 0;
-  const vitaminD = totalNutrients.VITD.quantity.toFixed() || 0;
-  const calcium = totalNutrients.CA.quantity.toFixed() || 0;
-  const iron = totalNutrients.FE.quantity.toFixed() || 0;
-  const potassium = totalNutrients.K.quantity.toFixed() || 0;
+  const transFat = totalNutrients?.FATRN?.quantity.toFixed() || 0;
+  const cholestrol = totalNutrients?.CHOLE?.quantity.toFixed() || 0;
+  const sodium = totalNutrients?.NA?.quantity.toFixed() || 0;
+  const totalCarbohydrate = totalNutrients?.CHOCDF?.quantity.toFixed() || 0;
+  const dietaryFiber = totalNutrients?.FIBTG?.quantity.toFixed() || 0;
+  const totalSugar = totalNutrients?.SUGAR?.quantity.toFixed() || 0;
+  const protein = totalNutrients?.PROCNT?.quantity.toFixed() || 0;
+  const vitaminD = totalNutrients?.VITD?.quantity.toFixed() || 0;
+  const calcium = totalNutrients?.CA?.quantity.toFixed() || 0;
+  const iron = totalNutrients?.FE?.quantity.toFixed() || 0;
+  const potassium = totalNutrients?.K?.quantity.toFixed() || 0;
 
   //variable for daily value
-  const totalFatPercen = totalDaily.FAT.quantity.toFixed() || 0;
-  const saturatedPercen = totalDaily.FASAT.quantity.toFixed() || 0;
-  const chocolestrolPercen = totalDaily.CHOLE.quantity.toFixed() || 0;
-  const sodiumPercen = totalDaily.NA.quantity.toFixed() || 0;
-  const totalCarbohydratePercen = totalDaily.CHOCDF.quantity.toFixed() || 0;
-  const dietaryFiberPercen = totalDaily.FIBTG.quantity.toFixed() || 0;
-  const proteinPercen = totalDaily.PROCNT.quantity.toFixed() || 0;
-  const VitaminDPercen = totalDaily.VITD.quantity.toFixed() || 0;
-  const calciumPercen = totalDaily.CA.quantity.toFixed() || 0;
-  const ironPercen = totalDaily.FE.quantity.toFixed() || 0;
-  const potassiumPercen = totalDaily.K.quantity.toFixed() || 0;
+  const totalFatPercen = totalDaily?.FAT.quantity.toFixed() || 0;
+  const saturatedPercen = totalDaily?.FASAT?.quantity.toFixed() || 0;
+  const chocolestrolPercen = totalDaily?.CHOLE?.quantity.toFixed() || 0;
+  const sodiumPercen = totalDaily?.NA?.quantity.toFixed() || 0;
+  const totalCarbohydratePercen = totalDaily?.CHOCDF?.quantity.toFixed() || 0;
+  const dietaryFiberPercen = totalDaily?.FIBTG?.quantity.toFixed() || 0;
+  const proteinPercen = totalDaily?.PROCNT?.quantity.toFixed() || 0;
+  const VitaminDPercen = totalDaily?.VITD?.quantity.toFixed() || 0;
+  const calciumPercen = totalDaily?.CA?.quantity.toFixed() || 0;
+  const ironPercen = totalDaily?.FE?.quantity.toFixed() || 0;
+  const potassiumPercen = totalDaily?.K?.quantity.toFixed() || 0;
 
   return (
     <div className={styles.backdrop}>
@@ -70,8 +73,13 @@ const Overlay = (props) => {
             <div className="col-md-6 lg">
               <img src={image} className="recipeImg"></img>
               <br />
-              <Link to={url} id="detail"> Click here for Full recipe</Link>
-              <div className="detail"><b>Cuisine</b>: {cuisine}</div>
+              <Link to={url} id="detail">
+                {" "}
+                Click here for Full recipe
+              </Link>
+              <div className="detail">
+                <b>Cuisine</b>: {cuisine}
+              </div>
               <div className="detail">
                 Ingredient list:
                 {ingredient.map((item) => {

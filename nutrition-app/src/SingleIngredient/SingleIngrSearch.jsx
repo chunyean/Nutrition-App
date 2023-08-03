@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import SearchIngredient from "./SearchIngredient";
-
 import { Link } from "react-router-dom";
 import "./Allcomponents.css";
 import NutritionFact from "./NutritionFact";
@@ -13,6 +11,8 @@ const SingleIngrSearch = () => {
   const [image, setImage] = useState();
   const [showModal, setShowModal] = useState(false);
 
+
+  //function to get data
   const getData = async () => {
     const res = await fetch(
       import.meta.env.VITE_NUTRITION +
@@ -28,6 +28,7 @@ const SingleIngrSearch = () => {
     setShowModal(true);
   };
 
+  //fucntion to get image data
   const getImage = async () => {
     const res = await fetch(
       import.meta.env.VITE_IMAGE + ingredient + "&nutrition-type=logging"
@@ -36,21 +37,36 @@ const SingleIngrSearch = () => {
     setImage(data);
   };
 
+  //function to get user ingredient 
   const handleIngredientChange = (e) => {
     const data = e.target.value;
     setIngredient(data);
+
+    const letters = /^[A-Za-z\s\n\b\']+$/;
+    if (data.length === 0) {
+      return;
+    } else if (!data.match(letters)) {
+      return alert("ERROR! No number is allow");
+    }
   };
 
+  //function to get user key in weight
   const handleWeightChange = (e) => {
     const data = e.target.value;
     setWeight(data);
+
+    if (isNaN(data)) {
+      return alert("ERROR! Please keyin number between 1-10");
+    }
   };
 
+  //function handle button click
   const handleClick = (e) => {
     const data = e.target.value;
     setUnit(data);
   };
 
+  
   return (
     <div className="single">
       <div className="container md">
@@ -83,7 +99,7 @@ const SingleIngrSearch = () => {
             id="space"
             className="col-md-3"
             placeholder="Key in ingredient weight"
-            handleOnChange={handleWeightChange}
+            onChange={handleWeightChange}
           ></input>
           <select id="space" className="col-sm-1" onClick={handleClick}>
             <option>gm</option>
@@ -97,7 +113,7 @@ const SingleIngrSearch = () => {
             id="space"
             className="col-md-4"
             placeholder="Key in ingredient Name"
-            handleOnChange={handleIngredientChange}
+            onChange={handleIngredientChange}
           ></input>
         </div>
         <div>
@@ -105,6 +121,7 @@ const SingleIngrSearch = () => {
             type="button"
             id="btn"
             className="col-md-1 btn btn-outline-info"
+            disabled={!(weight && ingredient)}
             onClick={getData}
           >
             Search

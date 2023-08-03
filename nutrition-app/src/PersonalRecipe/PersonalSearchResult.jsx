@@ -1,19 +1,17 @@
 import React from "react";
-import "./table.css";
+import "../SingleIngredient/table.css";
 import ReactDOM from "react-dom";
 import styles from "./Modal.module.css";
 
-const SearchIngredient = (props) => {
+const PersonalSearchResult = (props) => {
   return (
     <>
       {ReactDOM.createPortal(
         <Overlay
           nutrition={props.nutrition}
-          weight={props.weight}
-          ingredient={props.ingredient}
-          image={props.image}
-          unit={props.unit}
+          title={props.title}
           setShowModal={props.setShowModal}
+          photo={props.photo}
         ></Overlay>,
         document.querySelector("#modal-root")
       )}
@@ -59,17 +57,6 @@ const Overlay = (props) => {
   const ironPercen = totalDaily.FE.quantity.toFixed() || 0;
   const potassiumPercen = totalDaily.K.quantity.toFixed() || 0;
 
-  const photo = () => {
-    return (
-      props.image.parsed[0].food.image ||
-      props.image.hints[0].food.image ||
-      props.image.hints[1].food.image ||
-      props.image.hints[2].food.image ||
-      props.image.hints[3].food.image ||
-      props.image.hints[4].food.image
-    );
-  };
-
   return (
     <div className={styles.backdrop}>
       <div className={styles.modal}>
@@ -80,14 +67,14 @@ const Overlay = (props) => {
           onClick={() => props.setShowModal(false)}
         ></button>
         <h5 className={styles.h5}>Searching Result</h5>
-        <img src={photo()} className="image"></img>
+        <img src={props.photo} className={styles.image}></img>
         <section className="nutrition-facts">
           <header className="header">
             <h2 className="title">Nutrition Facts</h2>
-            <h2 className="ingredient">{props.ingredient}</h2>
+            <h2 className="ingredient">{props.title}</h2>
             <p className="serving-size">
-              Serving Size {props.weight}
-              {props.unit}
+              Serving Size {data.totalWeight}
+              gm
             </p>
           </header>
 
@@ -196,4 +183,4 @@ const Overlay = (props) => {
   );
 };
 
-export default SearchIngredient;
+export default PersonalSearchResult;

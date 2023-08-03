@@ -5,9 +5,12 @@ import RecipeDetails from "./RecipeDetails";
 
 const RecipeResult = (props) => {
   const [imageData, setImageData] = useState();
+  const [showModal, setShowModal] = useState(false);
 
+  //function to get data from the photo user clicked
   const getImageData = (item) => {
     setImageData(item);
+    setShowModal(true);
   };
 
   return (
@@ -18,7 +21,7 @@ const RecipeResult = (props) => {
           <ImageListItemBar title={props.item.recipe.label} />
         </ImageListItem>
       </div>
-      {imageData && <RecipeDetails imageData={imageData}></RecipeDetails>}
+      {showModal && imageData && <RecipeDetails imageData={imageData} setShowModal={setShowModal}></RecipeDetails>}
     </div>
   );
 };

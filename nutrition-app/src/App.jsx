@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
-import { Route, Routes, Navigate } from "react-router-dom";
-import SingleIngrSearch from "./components/SingleIngrSearch";
-import PersonalRecipeSearch from "./components/PersonalRecipeSearch";
-import Landing from "./components/Landing";
-import StandardRecipe from "./components/StandardRecipe";
-import RecipeDetails from "./components/RecipeDetails";
+import { Route, Routes } from "react-router-dom";
+import SingleIngrSearch from "./SingleIngredient/SingleIngrSearch";
+import PersonalRecipeSearch from "./PersonalRecipe/PersonalRecipeSearch";
+import Landing from "./SingleIngredient/Landing";
+import StandardRecipe from "./StandardRecipe/StandardRecipe";
+
 
 function App() {
 

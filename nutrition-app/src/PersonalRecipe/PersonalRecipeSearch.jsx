@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import "./Allcomponents.css";
-import PersonalSearchResult from "./PersonalSearchResult";
-import { Link } from "react-router-dom"
-import NutritionFact from "./NutritionFact";
+import "../SingleIngredient/Allcomponents.css";
+import { Link } from "react-router-dom";
+import NutritionFact from "../SingleIngredient/NutritionFact";
 
 const PersonalRecipeSearch = () => {
   const [title, setTitle] = useState("");
@@ -22,13 +21,15 @@ const PersonalRecipeSearch = () => {
   const photo4 =
     "https://img.freepik.com/free-photo/young-man-cooking-fresh-food-home-opening-lid-steaming-pot_1220-5383.jpg?w=900&t=st=1690871611~exp=1690872211~hmac=bcf5f21ea9aabe7fd030fb14844d036526800b24c88aa05c3a2487572a41aad8";
 
-  const randomPhoto = [photo1, photo2, photo3, photo3];
+  const randomPhoto = [photo1, photo2, photo3, photo4];
 
+  //function to get random photo
   const getPhoto = () => {
     const data = Math.floor(Math.random() * randomPhoto.length);
     setPhoto(randomPhoto[data]);
   };
 
+  //function to get data
   const getData = async () => {
     const res = await fetch(import.meta.env.VITE_DETAIL, {
       method: "POST",
@@ -51,11 +52,13 @@ const PersonalRecipeSearch = () => {
     }
   };
 
+  //functiont to collect user title
   const handleTitle = (e) => {
     const data = [e.target.value];
     setTitle(data);
   };
 
+  //function to collect user ingredient
   const handleChange = (event) => {
     setIngredient(event.target.value);
     const newArray = event.target.value.split("\n");
@@ -71,8 +74,8 @@ const PersonalRecipeSearch = () => {
             <br />
             Homecook food or any creative dishes by you
           </h2>
-          </div>
-          <div>
+        </div>
+        <div>
           <h4>Title of Your Own Recipe</h4>
           <input
             className="col-md-3"
@@ -99,19 +102,24 @@ const PersonalRecipeSearch = () => {
               />
             </div>
           </Box>
-          <button className="col-md-2 btn btn-info" type="button" onClick={getData}>
+          <button
+            className="col-md-2 btn btn-info"
+            type="button"
+            disabled={!(title && ingredient)}
+            onClick={getData}
+          >
             submit
           </button>
         </div>
         <Link to="/">
-            <img
-              src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/512/house-icon.png"
-              id="home2"
-            ></img>
-          </Link>
+          <img
+            src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/512/house-icon.png"
+            id="home2"
+          ></img>
+        </Link>
       </div>
       {showModal && nutrition && (
-        <NutritionFact  
+        <NutritionFact
           nutrition={nutrition}
           title={title}
           setShowModal={setShowModal}
