@@ -32,13 +32,14 @@ const Navigation = () => {
             ></img>
           </Link>
           <p className="p2">Personal Recipe</p>
-          <Link  to="/standard-recipe-search">
+          <Link to="/standard-recipe-search">
             <img
               src="https://www.luxurylifestylemag.co.uk/wp-content/uploads/2020/10/bigstock-Modern-Food-Stylist-Decorating-253975528-1.jpg"
               className="image3"
             ></img>
           </Link>
           <p className="p3">Standard Recipe</p>
+          <div className="col-md-4"></div>
         </div>
       </div>
     </>

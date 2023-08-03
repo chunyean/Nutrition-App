@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import RecipeSearch from "./RecipeSearch";
 import { Link } from "react-router-dom";
+import "../SingleIngredient/Allcomponents.css";
 
 const StandardRecipe = () => {
   const [recipe, setRecipe] = useState("");
@@ -111,7 +112,6 @@ const StandardRecipe = () => {
               onChange={handleMainIngr}
             />
             <h5>Number of Ingredient</h5>
-
             <input
               type="text"
               className="text"

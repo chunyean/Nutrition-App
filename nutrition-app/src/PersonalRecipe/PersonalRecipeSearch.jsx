@@ -84,7 +84,13 @@ const PersonalRecipeSearch = () => {
             placeholder="Title"
             onChange={handleTitle}
           ></input>
-          <h4>Key in all the weight, unit and ingredient</h4>
+          <h4>
+            Key in all the weight, unit and ingredient
+            <br />
+            ex: 100gm chicken thight
+            <br />
+            100gm white rice
+          </h4>
           <Box
             component="form"
             sx={{

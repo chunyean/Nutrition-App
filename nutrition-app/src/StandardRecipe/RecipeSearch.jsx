@@ -8,7 +8,7 @@ const RecipeSearch = (props) => {
   const data = props.recipe;
 
   return (
-    <ImageList sx={{ width: 1150, height: 1000 }}>
+    <ImageList sx={{ width: 1230, height: 1000 }}>
       <ImageListItem key="Subheader" cols={4}>
         <ListSubheader component="div">Search Result</ListSubheader>
       </ImageListItem>
