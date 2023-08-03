@@ -5,6 +5,7 @@ import SingleIngrSearch from "./SingleIngredient/SingleIngrSearch";
 import PersonalRecipeSearch from "./PersonalRecipe/PersonalRecipeSearch";
 import Landing from "./SingleIngredient/Landing";
 import StandardRecipe from "./StandardRecipe/StandardRecipe";
+import Calculator from "./Calculator/Calculator";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           element={<StandardRecipe></StandardRecipe>}
         />
       </Routes>
+      <Calculator></Calculator>
     </>
   );
 }
