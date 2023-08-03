@@ -115,11 +115,12 @@ const StandardRecipe = () => {
             <input
               type="text"
               className="text"
-              min={1}
-              max={10}
+              min={5}
+              max={15}
               maxLength={2}
-              pattern="[1-10]"
-              placeholder="ex: 1,2,3 or 2-5"
+              pattern="[5-15]"
+              placeholder="number start from 5 until 15. 
+              ex: single number: 7, double number 10: 10 or in between number 5-8."
               required
               onChange={handleNumIngr}
             ></input>
