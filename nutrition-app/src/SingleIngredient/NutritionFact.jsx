@@ -199,6 +199,7 @@ const Overlay = (props) => {
           </div>
         </div>
       </div>
+      <div id="edamam-badge" data-color="white"></div>
     </div>
   );
 };

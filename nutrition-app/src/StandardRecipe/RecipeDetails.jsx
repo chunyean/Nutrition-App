@@ -86,6 +86,7 @@ const Overlay = (props) => {
                   return <li>{item}</li>;
                 })}
               </div>
+              <div id="edamam-badge" data-color="white"></div>
             </div>
             <div className="col-md-6 lg">
               <section className="nutrition-facts">
