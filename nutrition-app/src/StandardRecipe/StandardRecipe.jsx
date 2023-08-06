@@ -102,12 +102,12 @@ const StandardRecipe = () => {
           </h3>
         </div>
         <br />
-        <div className="container-md lg xl xxl">
-          <form>
+        <div className="col-md-12 lg xl xxl">
+          <form className="form">
             <h5>Main Ingredient</h5>
             <input
               type="text"
-              className="focus:shadow-outline-purple"
+              className="text"
               placeholder="ex: chicken, pork"
               onChange={handleMainIngr}
             />
@@ -119,14 +119,13 @@ const StandardRecipe = () => {
               max={15}
               maxLength={2}
               pattern="[5-15]"
-              placeholder="number start from 5 until 15. 
-              ex: single number: 7, double number 10: 10 or in between number 5-8."
+              placeholder="number start from 5 until 15."
               required
               onChange={handleNumIngr}
             ></input>
 
             <h5>Select Cuisine</h5>
-            <select onChange={handleCuisine}>
+            <select className="text" onChange={handleCuisine}>
               {cuisineType.map((item, idx) => {
                 return (
                   <option key={idx} id={idx}>
@@ -136,7 +135,7 @@ const StandardRecipe = () => {
               })}
             </select>
             <h5>Type of Meal</h5>
-            <select onChange={handleMealType}>
+            <select className="text" onChange={handleMealType}>
               {typeOfMeal.map((item, idx) => {
                 return (
                   <option key={idx} id={idx}>
@@ -157,13 +156,20 @@ const StandardRecipe = () => {
             </button>
           </form>
         </div>
-        <Link to="/">
-          <img
-            src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/512/house-icon.png"
-            id="home3"
-          ></img>
-        </Link>
         {recipe && <RecipeSearch recipe={recipe}></RecipeSearch>}
+      </div>
+      <div className="container md lg">
+        <div className="row md lg">
+          <div className="col-md-11"></div>
+          <div className="col-md-1">
+            <Link to="/">
+              <img
+                src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/512/house-icon.png"
+                id="home3"
+              ></img>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -81,7 +81,7 @@ const Overlay = (props) => {
         <h5 className={styles.h5}>Searching Result</h5>
         <div className="container">
           <div className="row">
-            <div className="col-md-6" id="column">
+            <div className="col-md-6 lg sm" >
               <img src={photo()} className={styles.image}></img>
             </div>
             <div className="col-md-6">

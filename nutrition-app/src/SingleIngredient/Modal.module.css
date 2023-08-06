@@ -2,6 +2,7 @@
   text-align: center;
   font-size: 3rem;
   text-decoration: underline;
+  margin: auto;
 }
 
 .backdrop {
@@ -15,10 +16,12 @@
 }
 
 .image {
-  width: 450px;
-  height: 400px;
-  margin: 10% 10%;
-  padding-left: 10%;
+  max-width: 150%;
+  max-height: 150%;
+  min-width: 250px;
+  min-height: 250px;
+  margin: auto;
+  padding: 20%;
 }
 
 .modal {
@@ -28,7 +31,6 @@
   bottom: 1rem;
   left: 4rem;
   right: 4rem;
-  width: 90%;
   z-index: 100;
   overflow-y: auto;
   margin: 1rem 1rem;

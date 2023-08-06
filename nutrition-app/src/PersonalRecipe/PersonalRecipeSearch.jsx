@@ -102,7 +102,7 @@ const PersonalRecipeSearch = () => {
                 className="textField"
                 id="outlined-multiline-static"
                 multiline
-                rows={7}
+                rows={6}
                 placeholder="key in ingredient with weight"
                 onChange={handleChange}
               />
@@ -117,12 +117,19 @@ const PersonalRecipeSearch = () => {
             submit
           </button>
         </div>
-        <Link to="/">
-          <img
-            src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/512/house-icon.png"
-            id="home2"
-          ></img>
-        </Link>
+      </div>
+      <div className="container md lg">
+        <div className="row md lg">
+          <div className="col-md-4"></div>
+          <div className="col-md-1">
+            <Link to="/">
+              <img
+                src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/512/house-icon.png"
+                id="home2"
+              ></img>
+            </Link>
+          </div>
+        </div>
       </div>
       {showModal && nutrition && (
         <NutritionFact

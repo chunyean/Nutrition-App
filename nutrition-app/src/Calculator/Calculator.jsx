@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import "../SingleIngredient/Landing.css";
-import { Link } from"react-router-dom"
+import { Link } from "react-router-dom";
 
 const Calculator = () => {
   const [calories, setCalories] = useState();
@@ -66,32 +66,39 @@ const Calculator = () => {
             Use this calorie calculator to find out how many calories you really
             need per day!
           </h4>
-          <div className="row"></div>
-          <select className="gender col-md-1" onChange={handleGenderChange}>
+          <select className="gender col-md-2" onChange={handleGenderChange}>
             <option value="male">Male</option>
             <option value="female">Female</option>
           </select>
           <Box
             component="form"
             sx={{
-              "& .MuiTextField-root": { m: 1, width: "40ch" },
+              "& .MuiTextField-root": {
+                m: 1,
+                width: 350,
+                maxWidth: "md",
+                left: 10,
+              },
             }}
             noValidate
             autoComplete="off"
+            className="boxfield"
           >
-            <div className="input col-md-6">
+            <div className="input">
               <TextField
                 id="outlined-search"
                 label="Age"
                 type="text"
                 onChange={handleAgeChange}
               />
+              <br />
               <TextField
                 id="outlined-search"
                 label="Height in cm"
                 type="text"
                 onChange={handleHeightChange}
               />
+              <br />
               <TextField
                 id="outlined-search"
                 label="Weight in kg"
@@ -100,7 +107,7 @@ const Calculator = () => {
               />
             </div>
           </Box>
-          <select className="select" onChange={handleExerciseChange}>
+          <select className="col-md-3" onChange={handleExerciseChange}>
             <option value={1.2}>Sedentary (little or no exercise)</option>
             <option value={1.375}>
               Lightly active (exercise 1–3 days/week)
@@ -123,11 +130,11 @@ const Calculator = () => {
         </div>
       </div>
       <Link to="/">
-          <img
-            src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/512/house-icon.png"
-            id="home4"
-          ></img>
-        </Link>
+        <img
+          src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/512/house-icon.png"
+          id="home4"
+        ></img>
+      </Link>
     </div>
   );
 };

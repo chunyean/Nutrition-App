@@ -5,12 +5,11 @@
   background-position: center;
   background-size: 100%;
   background-attachment: fixed;
-  padding: 6%;
-  padding-bottom: 0.7%;
+  padding-top: 3.3%;
 }
 
 #space {
-  margin: auto 1%;
+  margin: 5px;
 }
 
 .h2title {
@@ -40,17 +39,17 @@
 }
 
 #home {
-  width: 15%;
-  height: 100%;
+  width: 80px;
   position: relative;
-  bottom: 5%;
+  padding-bottom: 20px;
+
 }
 
-.home {
+/* .home {
   display: flex;
   justify-content: left;
   padding-left: 150px;
-}
+} */
 
 .p1 {
   font-weight: bold;
@@ -68,8 +67,7 @@
   background-position: center;
   background-size: 100%;
   background-attachment: fixed;
-  padding: 5%;
-  padding-bottom: 0%;
+  padding: 1.6%;
   padding-right: 2%;
 }
 
@@ -86,38 +84,40 @@
 }
 
 #home2 {
-  display: flex;
+  display: block;
   justify-content: left;
-  width: 6%;
-  height: 6%;
+  width: 60px;
   position: relative;
-  left: 35%;
 }
 
 .standard {
   background-image: url("https://img.freepik.com/free-photo/healthy-green-vegetarian-buddha-bowl-lunch-with-eggs-rice-tomato-avocado-blue-cheese-table_2829-18801.jpg?w=900&t=st=1690993707~exp=1690994307~hmac=587831ef170689672848be885c61b9f6cc994011164072196d293e6f436ff34a");
-  background-position: right;
+  background-position: center;
   background-size: 100%;
   background-attachment: fixed;
+  padding-top: 4.3%;
 }
 
 .container3 {
   text-align: left;
-  padding: 5% 2%;
+  padding-left: 20px;
+}
+
+.text {
+  width: 15rem;
 }
 
 #home3 {
   display: block;
   position: relative;
-  width: 6%;
-  height: 6%;
-  left: 95%;
-  margin-bottom: 0%;
+  width: 80px;
+  /* padding-top: 2.2%;
+  padding-bottom: 2.2%; */
 }
 
 .title2 {
   text-align: center;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
   text-decoration: underline;
 }
@@ -128,16 +128,13 @@
 }
 
 .recipeImg {
-  padding-top: 10%;
-  padding-left: 25%;
+  padding-top: 6%;
 }
 
 #detail {
   font-size: 1.5rem;
-  padding-left: 30%;
 }
 
 .div {
   font-size: 20px;
 }
-

@@ -11,7 +11,6 @@ const SingleIngrSearch = () => {
   const [image, setImage] = useState();
   const [showModal, setShowModal] = useState(false);
 
-
   //function to get data
   const getData = async () => {
     const res = await fetch(
@@ -37,7 +36,7 @@ const SingleIngrSearch = () => {
     setImage(data);
   };
 
-  //function to get user ingredient 
+  //function to get user ingredient
   const handleIngredientChange = (e) => {
     const data = e.target.value;
     setIngredient(data);
@@ -66,7 +65,6 @@ const SingleIngrSearch = () => {
     setUnit(data);
   };
 
-  
   return (
     <div className="single">
       <div className="container md">
@@ -127,13 +125,19 @@ const SingleIngrSearch = () => {
             Search
           </button>
         </div>
-        <div className="home md">
-          <Link to="/">
-            <img
-              src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/512/house-icon.png"
-              id="home"
-            ></img>
-          </Link>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-2"></div>
+            <div className="col-md-2">
+            <Link to="/">
+              <img
+                src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/512/house-icon.png"
+                id="home"
+              ></img>
+            </Link>
+            </div>
+            <div className="col-md-8"></div>
+          </div>
         </div>
       </div>
 

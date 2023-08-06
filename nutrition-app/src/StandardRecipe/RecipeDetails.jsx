@@ -70,7 +70,7 @@ const Overlay = (props) => {
         <div className="container md ">
           <div className="row">
             <h2 className="title2 md">{dishName}</h2>
-            <div className="col-md-6 lg">
+            <div className="detail col-md-6 lg">
               <img src={image} className="recipeImg"></img>
               <br />
               <Link to={url} id="detail">
