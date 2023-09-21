@@ -118,7 +118,7 @@ const SingleIngrSearch = () => {
           <button
             type="button"
             id="btn"
-            className="col-md-1 btn btn-outline-info"
+            // className="col-md-1 btn btn-outline-info"
             disabled={!(weight && ingredient)}
             onClick={getData}
           >
@@ -131,7 +131,7 @@ const SingleIngrSearch = () => {
             <div className="col-md-2">
             <Link to="/">
               <img
-                src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/512/house-icon.png"
+                src="../public/return.256x233.png"
                 id="home"
               ></img>
             </Link>
