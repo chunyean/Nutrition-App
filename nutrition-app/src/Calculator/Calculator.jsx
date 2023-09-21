@@ -29,6 +29,39 @@ const Calculator = () => {
     setCalories(amr.toFixed());
   };
 
+  const bmiresult = (bmi) => {
+    if (bmi < 18.5) {
+      return <p> BMI: {bmi} Under Weight</p>;
+    } else if (bmi >= 18.5 && bmi <= 24.9) {
+      return <p> BMI: {bmi} Normal Weight</p>;
+    } else if (bmi >= 25 && bmi <= 29.9) {
+      return <p> BMI: {bmi} Over Weight</p>;
+    } else if (bmi >= 30.0 && bmi <= 34.9) {
+      return <p> BMI: {bmi} Obesity Class 1</p>;
+    } else if (bmi >= 35 && bmi <= 39.9) {
+      return <p> BMI: {bmi} Obesity Class 2</p>;
+    } else if (bmi >= 40) {
+      return <p> BMI: {bmi} Obesity Class 3</p>;
+    } else {
+      return <p> BMI: 0</p>;
+    }
+  };
+  
+
+  // if (bmi < 18.5) {
+  //   return <p> BMI: {bmi} Under Weight</p>;
+  // } else if (18.5 <= bmi <= 24.9) {
+  //   return <p> BMI: {bmi} Normal Weight</p>;
+  // } else if (25 <= bmi <= 29.9) {
+  //   return <p> BMI:{bmi} Over Weight</p>;
+  // } else if (30.0 <= bmi <= 34.9) {
+  //   return <p> BMI: {bmi} Obesity Class 1</p>;
+  // } else if (35 <= bmi <= 39.9) {
+  //   return <p> BMI: {bmi} Obesity Class 2</p>;
+  // } else {
+  //   return <p> BMI: {bmi} Obesity Class 3</p>;
+  // }
+
   const handleGenderChange = (event) => {
     setGender(event.target.value);
   };
@@ -126,7 +159,14 @@ const Calculator = () => {
         </button>
         <div className="result">
           <h4>Calories per day: {calories}</h4>
-          <h4>BMI: {bmi}</h4>
+        </div>
+        <div className="bmiresult">{bmiresult(bmi)}</div>
+        <div className="bmi">
+          <img
+            src="../public/bmi-calculator-normal-ranges.png"
+            className="bmicategory"
+          />
+          <img src="../public/BMI-1024x569.png" className="bmipic" />
         </div>
       </div>
       <Link to="/">
