@@ -81,7 +81,7 @@ const Overlay = (props) => {
         <h5 className={styles.h5}>Searching Result</h5>
         <div className="container">
           <div className="row">
-            <div className="col-md-6 lg sm" >
+            <div className="col-md-6 lg sm">
               <img src={photo()} className={styles.image}></img>
             </div>
             <div className="col-md-6">
@@ -194,12 +194,12 @@ const Overlay = (props) => {
                   serving of food contributes to a daily diet. 2,000 calories a
                   day is used for general nutrition advice.
                 </p>
+                <img src="../public/Edamam_Badge_Light.svg"/>
               </section>
             </div>
           </div>
         </div>
       </div>
-      <div id="edamam-badge" data-color="white"></div>
     </div>
   );
 };
