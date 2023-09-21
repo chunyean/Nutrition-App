@@ -1,9 +1,11 @@
 .container1 {
   text-align: center;
   padding: 1rem 1rem;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
-.container1 h1{
+.container1 h1 {
   font-size: 2.7rem;
 }
 
@@ -11,19 +13,17 @@
   display: block;
   position: relative;
   margin: auto;
-  width: 90%;
+  width: 70%;
   border-radius: 30%;
 }
-
 
 .image1 {
   display: block;
   position: relative;
   margin: auto;
   border-radius: 40%;
-  height: 40%;
-  width: 80%;
-
+  height: 30%;
+  width: 60%;
 }
 
 .column1 {
@@ -41,7 +41,6 @@
   font-weight: bold;
   text-align: center;
 }
-
 
 .container4 {
   background-color: #bcddd4;
@@ -79,3 +78,28 @@
   top: 124%;
 }
 
+.bmi {
+  /* background-color: aquamarine; */
+  width: 80%;
+  margin: auto;
+}
+
+.bmicategory {
+  width: 30%;
+}
+
+.bmipic {
+  /* background-color: aqua; */
+  width: 70%;
+}
+
+.bmiresult {
+  /* background-color: aqua; */
+  width: 300px;
+  height: 30px;
+  margin: auto;
+}
+
+.bmiresult > p {
+  font-size: 1.5dvw;
+}
