@@ -1,18 +1,18 @@
 import React from "react";
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
-import SingleIngrSearch from "./SingleIngredient/SingleIngrSearch";
-import PersonalRecipeSearch from "./PersonalRecipe/PersonalRecipeSearch";
-import Landing from "./SingleIngredient/Landing";
-import StandardRecipe from "./StandardRecipe/StandardRecipe";
-import Calculator from "./Calculator/Calculator";
+// import { Route, Routes } from "react-router-dom";
+// import SingleIngrSearch from "./SingleIngredient/SingleIngrSearch";
+// import PersonalRecipeSearch from "./PersonalRecipe/PersonalRecipeSearch";
+// import Landing from "./SingleIngredient/Landing";
+// import StandardRecipe from "./StandardRecipe/StandardRecipe";
+// import Calculator from "./Calculator/Calculator";
 
 
 function App() {
 
   return (
     <>
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<Landing></Landing>} />
         <Route
           path="/single-ingredient-search"
@@ -30,7 +30,8 @@ function App() {
           path="/calculator"
           element={<Calculator></Calculator>}
         />
-      </Routes>
+      </Routes> */}
+      <h1>hello</h1>
 
     </>
   );
