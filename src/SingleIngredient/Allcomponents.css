@@ -1,0 +1,137 @@
+.single {
+  background-color: antiquewhite;
+  height: 100%;
+  width: 70%;
+  margin: 9dvw auto;
+}
+
+#space {
+  margin: 5px;
+}
+
+.h2title {
+  text-align: center;
+}
+
+.box {
+  padding: 1%;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.row2 {
+  border: 2px solid green;
+  border-style: double;
+  width: 50%;
+  justify-self: center;
+  margin: auto;
+  font-size: 1.05rem;
+}
+
+#btn {
+  margin: 1% auto;
+  display: flex;
+  width: 10dvw;
+  height: 3dvw;
+  justify-content: center;
+  align-items: center;
+  background-color: aquamarine;
+  color: black;
+  border-radius: 20px;
+}
+
+#home {
+  /* background-color: aqua; */
+  position: absolute;
+  width: 3%;
+  height: 6%;
+  top: 25%;
+  left: 5%;
+}
+
+.p1 {
+  font-weight: bold;
+  margin: auto;
+}
+
+#button {
+  float: right;
+  padding: 1%;
+  color: black;
+}
+
+.personal {
+  background-image: url("https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=732&q=80");
+  background-position: center;
+  background-size: cover;
+  padding-right: 2%;
+  margin: 8dvw auto;
+}
+
+.containerper {
+  text-align: right;
+}
+
+.h2personal {
+  font-weight: bold;
+}
+
+.textField {
+  background-color: white;
+}
+
+#home2 {
+  width: 3%;
+  height: 6%;
+  position: absolute;
+  top: 4dvw;
+  left: 2dvw;
+}
+
+.standard {
+  background-image: url("https://img.freepik.com/free-photo/healthy-green-vegetarian-buddha-bowl-lunch-with-eggs-rice-tomato-avocado-blue-cheese-table_2829-18801.jpg?w=900&t=st=1690993707~exp=1690994307~hmac=587831ef170689672848be885c61b9f6cc994011164072196d293e6f436ff34a");
+  background-position: center;
+  background-size: cover;
+  margin: 9dvw auto;
+}
+
+.container3 {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.text {
+  width: 15rem;
+}
+
+#home3 {
+  width: 3%;
+  height: 6%;
+  position: absolute;
+  top: 5dvw;
+  left: 2dvw;
+}
+
+.title2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.detail {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.recipeImg {
+  padding-top: 6%;
+}
+
+#detail {
+  font-size: 1.5rem;
+}
+
+.div {
+  font-size: 20px;
+}

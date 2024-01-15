@@ -1,0 +1,105 @@
+.container1 {
+  text-align: center;
+  padding: 1rem 1rem;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.container1 h1 {
+  font-size: 2.7rem;
+}
+
+.nutrition {
+  display: block;
+  position: relative;
+  margin: auto;
+  width: 70%;
+  border-radius: 30%;
+}
+
+.image1 {
+  display: block;
+  position: relative;
+  margin: auto;
+  border-radius: 40%;
+  height: 30%;
+  width: 60%;
+}
+
+.column1 {
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+  padding: 2rem 1rem;
+}
+
+.p {
+  display: block;
+  position: relative;
+  padding: 1rem 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.container4 {
+  background-color: #bcddd4;
+}
+
+.boxx {
+  background-color: aliceblue;
+  text-align: center;
+  margin: 35px 40px;
+}
+
+.result {
+  text-align: center;
+  margin: auto;
+}
+
+.button3 {
+  margin: 15px 10px;
+  width: 100px;
+}
+
+#home4 {
+  display: block;
+  position: absolute;
+  right: 5%;
+  bottom: 10%;
+  width: 7%;
+}
+
+.p4 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  position: absolute;
+  right: 13%;
+  top: 124%;
+}
+
+.bmi {
+  /* background-color: aquamarine; */
+  width: 80%;
+  margin: auto;
+}
+
+.bmicategory {
+  width: 30%;
+}
+
+.bmipic {
+  /* background-color: aqua; */
+  width: 70%;
+}
+
+.bmiresult {
+  /* background-color: aqua; */
+  width: 300px;
+  height: 30px;
+  margin: auto;
+}
+
+.bmiresult > p {
+  font-size: 1.5dvw;
+}

@@ -1,0 +1,6 @@
+body{
+  background-image: url("https://img.freepik.com/free-vector/seamless-white-interlaced-rounded-arc-patterned-background_53876-97975.jpg?w=900&t=st=1695290171~exp=1695290771~hmac=a8edc728ea24f10034a16875eb73f0351eb0a9f6e951123edaee5dd66c0b5e34");
+  background-size: cover;
+  /* overflow-y: hidden; */
+  overflow-x: hidden;
+}
