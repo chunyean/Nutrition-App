@@ -14,7 +14,7 @@ const SingleIngrSearch = () => {
   //function to get data
   const getData = async () => {
     const res = await fetch(
-      import.meta.env.VITE_NUTRITION +
+      process.env.VITE_NUTRITION +
         "&nutrition-type=logging&ingr=" +
         weight +
         unit +
@@ -30,7 +30,7 @@ const SingleIngrSearch = () => {
   //fucntion to get image data
   const getImage = async () => {
     const res = await fetch(
-      import.meta.env.VITE_IMAGE + ingredient + "&nutrition-type=logging"
+      process.env.VITE_IMAGE + ingredient + "&nutrition-type=logging"
     );
     const data = await res.json();
     setImage(data);

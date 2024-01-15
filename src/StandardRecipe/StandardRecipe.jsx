@@ -37,9 +37,9 @@ const StandardRecipe = () => {
   //function to get data
   const getData = async () => {
     const res = await fetch(
-      import.meta.env.VITE_RECIPE +
+      process.env.VITE_RECIPE +
         mainIngr +
-        import.meta.env.VITE_RECIPE_APIKEY +
+        process.env.VITE_RECIPE_APIKEY +
         numIngr +
         "&cuisineType=" +
         cuisine +

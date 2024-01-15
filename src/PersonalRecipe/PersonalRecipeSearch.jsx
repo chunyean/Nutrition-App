@@ -31,7 +31,7 @@ const PersonalRecipeSearch = () => {
 
   //function to get data
   const getData = async () => {
-    const res = await fetch(import.meta.env.VITE_DETAIL, {
+    const res = await fetch(process.env.VITE_DETAIL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
