@@ -14,7 +14,6 @@ const SingleIngrSearch = () => {
   //function to get data
   const getData = async () => {
     console.log(process.env.VITE_NUTRITION)
-
     const res = await fetch(
       process.env.VITE_NUTRITION +
         "&nutrition-type=logging&ingr=" +
