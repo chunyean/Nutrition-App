@@ -14,7 +14,7 @@ const SingleIngrSearch = () => {
   //function to get data
   const getData = async () => {
     const res = await fetch(
-      import.meta.env.VITE_NUTRITION +
+      process.env.VITE_NUTRITION +
         "&nutrition-type=logging&ingr=" +
         weight +
         unit +
