@@ -13,10 +13,10 @@ const SingleIngrSearch = () => {
 
   //function to get data
   const getData = async () => {
-    console.log(process.env.REACT_APP_NUTRITION)
-    
+    console.log(process.env.VITE_NUTRITION)
+
     const res = await fetch(
-      process.env.REACT_APP_NUTRITION +
+      process.env.VITE_NUTRITION +
         "&nutrition-type=logging&ingr=" +
         weight +
         unit +
