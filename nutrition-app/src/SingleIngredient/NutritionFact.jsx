@@ -25,7 +25,7 @@ const Overlay = (props) => {
   const totalNutrients = data.totalNutrients;
   const totalDaily = data.totalDaily;
 
-  // variable for nutrtion
+  // variable for nutrition
   const calories = data.calories.toFixed() || 0;
   const totalFat = totalNutrients.FAT?.quantity.toFixed() || 0;
   const saturatedFat = totalNutrients.FASAT?.quantity.toFixed() || 0;
@@ -194,7 +194,7 @@ const Overlay = (props) => {
                   serving of food contributes to a daily diet. 2,000 calories a
                   day is used for general nutrition advice.
                 </p>
-                <img src="../public/Edamam_Badge_Light.svg"/>
+                <img src="../Edamam_Badge_Light.svg" />
               </section>
             </div>
           </div>
