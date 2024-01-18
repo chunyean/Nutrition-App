@@ -14,7 +14,7 @@ const SingleIngrSearch = () => {
   //function to get data
   const getData = async () => {
     console.log(import.meta.env.VITE_NUTRITION);
-    
+
     const res = await fetch(
       import.meta.env.VITE_NUTRITION +
         "&nutrition-type=logging&ingr=" +
@@ -132,7 +132,7 @@ const SingleIngrSearch = () => {
             <div className="col-md-2"></div>
             <div className="col-md-2">
               <Link to="/">
-                <img src="dist/return.256x233.png" id="home"></img>
+                <img src="return.256x233.png" id="home"></img>
               </Link>
             </div>
             <div className="col-md-8"></div>
