@@ -163,10 +163,10 @@ const Calculator = () => {
         <div className="bmiresult">{bmiresult(bmi)}</div>
         <div className="bmi">
           <img
-            src="../public/bmi-calculator-normal-ranges.png"
+            src="../bmi-calculator-normal-ranges.png"
             className="bmicategory"
           />
-          <img src="../public/BMI-1024x569.png" className="bmipic" />
+          <img src="../BMI-1024x569.png" className="bmipic" />
         </div>
       </div>
       <Link to="/">

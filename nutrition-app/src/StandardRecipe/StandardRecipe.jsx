@@ -164,7 +164,7 @@ const StandardRecipe = () => {
           <div className="col-md-1">
             <Link to="/">
               <img
-                src="../public/return.256x233.png"
+                src="../return.256x233.png"
                 id="home3"
               ></img>
             </Link>
