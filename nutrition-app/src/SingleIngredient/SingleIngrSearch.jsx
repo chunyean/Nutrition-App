@@ -132,7 +132,7 @@ const SingleIngrSearch = () => {
             <div className="col-md-2"></div>
             <div className="col-md-2">
               <Link to="/">
-                <img src="../return.256x233.jpg" id="home"></img>
+                <img src="../return.256x233.png" id="home"></img>
               </Link>
             </div>
             <div className="col-md-8"></div>
